@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Augusto Delfin - Legal Operations, Automation & Client Engagement. Based in Bilbao, Spain.">
+<title>Augusto Delfin - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F1B2D;
+  --navy-mid: #1A2D4A;
+  --navy-light: #253D5B;
+  --cream: #F5F0E8;
+  --cream-dark: #E8E0D2;
+  --cream-light: #FAF7F2;
+  --white: #FFFFFF;
+  --text-on-dark: #E8E2D6;
+  --text-muted-dark: #9AA3B0;
+  --text-on-light: #1A2D4A;
+  --text-muted-light: #5A6A7A;
+  --border-light: #D6CBBA;
+  --border-dark: #2A3F5C;
+  --font: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --max-w: 820px;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--text-on-light);
+  line-height: 1.7;
+  font-size: 15.5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: var(--max-w); margin: 0 auto; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim { animation: fadeUp 0.5s var(--ease) both; }
+.anim-d1 { animation-delay: 0.1s; }
+.anim-d2 { animation-delay: 0.2s; }
+
+/* Top Bar */
+.top-bar {
+  background: var(--navy);
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--white);
+}
+.top-bar-name {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.lang-bar { display: flex; gap: 2px; }
+.lang-btn {
+  background: none;
+  border: 1px solid var(--border-dark);
+  padding: 4px 12px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--text-muted-dark);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s var(--ease);
+}
+.lang-btn:hover { border-color: var(--white); color: var(--white); }
+.lang-btn.active { background: var(--white); color: var(--navy); border-color: var(--white); }
+
+/* Hero */
+.hero-block {
+  background: var(--navy);
+  padding: 56px 48px 48px;
+  position: relative;
+}
+.hero-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 48px;
+  right: 48px;
+  height: 1px;
+  background: var(--border-dark);
+}
+.hero-inner { display: flex; gap: 32px; align-items: flex-start; }
+.photo {
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  border-radius: 6px;
+  background: var(--navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.hero-text h1 {
+  font-family: var(--font);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.tagline {
+  font-size: 16px;
+  color: var(--text-muted-dark);
+  line-height: 1.65;
+  max-width: 500px;
+}
+.hero-meta {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted-dark);
+  letter-spacing: 0.3px;
+}
+.hero-meta span { display: inline-block; margin-right: 16px; }
+
+/* Metrics */
+.metrics-bar {
+  background: var(--navy-mid);
+  border-bottom: 3px solid var(--white);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.metric-item {
+  padding: 28px 24px;
+  text-align: center;
+  border-right: 1px solid var(--border-dark);
+}
+.metric-item:last-child { border-right: none; }
+.metric-num {
+  font-family: var(--font);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.metric-label {
+  font-size: 12px;
+  color: var(--text-muted-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+/* Content */
+.content { padding: 48px; background: var(--cream-light); }
+
+/* Section */
+.section { margin-bottom: 40px; }
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: var(--font);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--navy);
+}
+.section p {
+  font-size: 15.5px;
+  color: var(--text-muted-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* Divider */
+.divider { border: none; border-top: 1px solid var(--border-light); margin: 40px 0; }
+
+/* Pillars */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pillar {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  border-top: 3px solid var(--navy);
+}
+.pillar-header {
+  padding: 16px 18px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border-light);
+}
+.pillar-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+  flex: 1;
+}
+.pillar-chevron {
+  font-size: 11px;
+  color: var(--text-muted-light);
+  transition: transform 0.3s var(--ease);
+}
+.pillar.open .pillar-chevron { transform: rotate(180deg); }
+.pillar-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+.pillar.open .pillar-body { max-height: 500px; }
+.pillar-body ul { padding: 16px 18px; }
+.pillar-body li {
+  font-size: 13.5px;
+  color: var(--text-muted-light);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+  list-style: none;
+}
+.pillar-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 2px;
+  background: var(--navy);
+}
+
+/* Case Studies */
+.case-study {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--navy);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.case-header {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.case-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  flex: 1;
+}
+.case-chevron {
+  font-size: 11px;
+  color: var(--text-muted-light);
+  transition: transform 0.3s var(--ease);
+}
+.case-study.open .case-chevron { transform: rotate(180deg); }
+.case-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease);
+}
+.case-study.open .case-body { max-height: 600px; }
+.case-body-inner { padding: 0 20px 20px; }
+.case-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy-light);
+  margin-bottom: 4px;
+  margin-top: 14px;
+}
+.case-label:first-child { margin-top: 0; }
+.case-body p {
+  font-size: 13.5px;
+  color: var(--text-muted-light);
+  line-height: 1.65;
+  margin-bottom: 2px;
+}
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.skill-group {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 20px;
+  border-top: 3px solid var(--navy);
+}
+.skill-group h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.skill-group p {
+  font-size: 14px;
+  color: var(--text-muted-light);
+  line-height: 1.65;
+}
+
+/* Languages */
+.lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.lang-item {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 14px 16px;
+  text-align: center;
+  border-top: 3px solid var(--navy);
+}
+.lang-item .lang-name {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.lang-item .lang-level {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Education */
+.edu-block {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--navy);
+  border-radius: 2px;
+  padding: 20px 24px;
+}
+.edu-degree {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.edu-school {
+  font-size: 14px;
+  color: var(--text-muted-light);
+}
+
+/* Contact */
+.contact-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--navy);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.25s var(--ease);
+}
+.contact-link:hover {
+  background: var(--navy-light);
+  box-shadow: 0 4px 16px rgba(15, 27, 45, 0.2);
+}
+
+/* Footer */
+.footer-bar {
+  background: var(--navy);
+  padding: 20px 48px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted-dark);
+  letter-spacing: 0.5px;
+  border-top: 2px solid var(--white);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero-block { padding: 40px 24px 36px; }
+  .hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .tagline { max-width: 100%; }
+  .hero-meta { text-align: center; }
+  .hero-meta span { display: block; margin: 0 0 4px; }
+  .metrics-bar { grid-template-columns: 1fr; }
+  .metric-item { border-right: none; border-bottom: 1px solid var(--border-dark); }
+  .metric-item:last-child { border-bottom: none; }
+  .content { padding: 32px 24px; }
+  .pillars { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .lang-grid { grid-template-columns: 1fr 1fr; }
+  .hero-text h1 { font-size: 28px; }
+}
+
+/* Language visibility */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+.metrics-bar[data-lang].active { display: grid; }
+.pillars[data-lang].active { display: grid; }
+.skills-grid[data-lang].active { display: grid; }
+.lang-grid[data-lang].active { display: grid; }
+.contact-row[data-lang].active { display: flex; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top-bar">
+    <div class="top-bar-name">Augusto Delfin</div>
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" onclick="switchLang('es')">ES</button>
+      <button class="lang-btn" onclick="switchLang('fr')">FR</button>
+    </div>
+  </div>
+
+  <div class="hero-block anim">
+    <div class="hero-inner">
+      <div class="photo">A</div>
+      <div class="hero-text">
+        <h1>Augusto Delfin</h1>
+        <div class="tagline" data-lang="en">I build operational infrastructure so that high-value professionals can focus on the work that generates revenue.</div>
+        <div class="tagline" data-lang="es">Construyo infraestructura operativa para que los profesionales de alto valor se concentren en el trabajo que genera ingresos.</div>
+        <div class="tagline" data-lang="fr">Je construis l'infrastructure op&eacute;rationnelle pour que les professionnels puissent se concentrer sur le travail qui g&eacute;n&egrave;re des revenus.</div>
+        <div class="hero-meta">
+          <span>&#x1F4CD; Bilbao, Spain</span>
+          <span>&#x1F393; Master in Business Diplomacy</span>
+          <span>&#x1F310; EN &middot; ES &middot; FR &middot; FIL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics-bar anim anim-d1" data-lang="en">
+    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Social Media Growth</div></div>
+    <div class="metric-item"><div class="metric-num">300+</div><div class="metric-label">Consultations Managed</div></div>
+    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Billable Hours Saved / Year</div></div>
+  </div>
+  <div class="metrics-bar" data-lang="es">
+    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Crecimiento en Redes</div></div>
+    <div class="metric-item"><div class="metric-num">300+</div><div class="metric-label">Consultas Gestionadas</div></div>
+    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Horas Facturables Ahorradas</div></div>
+  </div>
+  <div class="metrics-bar" data-lang="fr">
+    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Croissance R&eacute;seaux Sociaux</div></div>
+    <div class="metric-item"><div class="metric-num">300+</div><div class="metric-label">Consultations G&eacute;r&eacute;es</div></div>
+    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Heures Facturables &Eacute;conomis&eacute;es</div></div>
+  </div>
+
+  <div class="content">
+
+    <div class="section anim anim-d2" data-lang="en">
+      <div class="section-label">Profile</div>
+      <div class="section-title">About</div>
+      <p>I'm a legal operations and client engagement professional based in Bilbao, Spain. I work at the intersection of process design, automation, and client experience &mdash; building the systems that allow legal teams to operate efficiently and focus on what matters: serving clients.</p>
+      <p>At my current firm, I hold three simultaneous roles spanning social media management, client engagement consulting, and legal operations automation. I've built automated data pipelines, intake workflows, and client-facing portals &mdash; all as a one-person operations team using tools like Zapier, Google Apps Script, and Google Data Studio.</p>
+      <p>I hold a Master in Business Diplomacy from the University of Deusto and bring native-level English and Filipino, C1 Spanish and French, and a sharp editorial instinct to everything I do.</p>
+    </div>
+    <div class="section" data-lang="es">
+      <div class="section-label">Perfil</div>
+      <div class="section-title">Sobre m&iacute;</div>
+      <p>Soy un profesional de operaciones legales y relaci&oacute;n con el cliente basado en Bilbao, Espa&ntilde;a. Trabajo en la intersecci&oacute;n del dise&ntilde;o de procesos, la automatizaci&oacute;n y la experiencia del cliente &mdash; construyendo los sistemas que permiten a los equipos legales operar de manera eficiente.</p>
+      <p>En mi firma actual, desempe&ntilde;o tres funciones simult&aacute;neas: gesti&oacute;n de redes sociales, consultor&iacute;a de relaci&oacute;n con el cliente y automatizaci&oacute;n de operaciones legales. He construido flujos de datos automatizados, sistemas de admisi&oacute;n y portales para clientes &mdash; todo como un equipo de una sola persona.</p>
+      <p>Tengo un M&aacute;ster en Diplomacia Empresarial de la Universidad de Deusto. Ingl&eacute;s y filipino nativos, espa&ntilde;ol y franc&eacute;s nivel C1.</p>
+    </div>
+    <div class="section" data-lang="fr">
+      <div class="section-label">Profil</div>
+      <div class="section-title">&Agrave; propos</div>
+      <p>Professionnel des op&eacute;rations juridiques et de la relation client bas&eacute; &agrave; Bilbao, en Espagne. Je travaille &agrave; l'intersection de la conception de processus, de l'automatisation et de l'exp&eacute;rience client.</p>
+      <p>Dans mon poste actuel, j'occupe trois fonctions simultan&eacute;es : gestion des r&eacute;seaux sociaux, conseil en relation client et automatisation des op&eacute;rations juridiques. J'ai construit des flux de donn&eacute;es, des syst&egrave;mes d'admission et des portails clients &mdash; le tout en tant qu'&eacute;quipe d'une seule personne.</p>
+      <p>Titulaire d'un Master en Diplomatie des Affaires de l'Universit&eacute; de Deusto. Anglais et philippin natifs, espagnol et fran&ccedil;ais C1.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Expertise</div><div class="section-title">What I Do</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">Expertises</div><div class="section-title">Ce que je fais</div></div>
+
+    <div class="pillars" data-lang="en">
+      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Legal Operations &amp; Automation</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Automated system aggregating real-time government policy updates across federal and provincial programs</li><li>Data pipeline with Google Data Studio, Apps Script &amp; Zapier visualizing applicant scores by eligibility bands</li><li>Centralized client onboarding microsite saving 50+ hours of billable time per year</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Social Media &amp; Communications</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>154% social media growth in one year (3,400 &rarr; 8,700+ followers) as sole strategist</li><li>End-to-end automated content publishing via Zapier &amp; Apps Script &mdash; zero manual intervention</li><li>Sole point of contact for all inbound communications across web, social &amp; email</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Client Engagement</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>300+ consultations managed annually: intake, identity verification, eligibility assessments &amp; scoring projections</li><li>Structured intake system saving 40+ administrative hours per year</li><li>Bilingual support for French-speaking clients navigating documentation</li></ul></div></div>
+    </div>
+    <div class="pillars" data-lang="es">
+      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Operaciones Legales y Automatizaci&oacute;n</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Sistema automatizado que agrega actualizaciones de pol&iacute;ticas gubernamentales en tiempo real</li><li>Flujo de datos con Google Data Studio, Apps Script y Zapier para visualizar puntajes por bandas de elegibilidad</li><li>Micrositio de incorporaci&oacute;n de clientes ahorrando m&aacute;s de 50 horas facturables al a&ntilde;o</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Redes Sociales y Comunicaci&oacute;n</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Crecimiento del 154% en un a&ntilde;o (3.400 &rarr; 8.700+ seguidores) como &uacute;nico estratega</li><li>Publicaci&oacute;n automatizada con Zapier y Apps Script &mdash; sin intervenci&oacute;n manual</li><li>&Uacute;nico punto de contacto para comunicaciones entrantes en web, redes y correo</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Relaci&oacute;n con el Cliente</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>M&aacute;s de 300 consultas gestionadas al a&ntilde;o: admisi&oacute;n, verificaci&oacute;n, evaluaciones y proyecciones</li><li>Sistema de admisi&oacute;n que ahorr&oacute; m&aacute;s de 40 horas administrativas al a&ntilde;o</li><li>Soporte biling&uuml;e para clientes franc&oacute;fonos</li></ul></div></div>
+    </div>
+    <div class="pillars" data-lang="fr">
+      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Op&eacute;rations Juridiques et Automatisation</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Syst&egrave;me automatis&eacute; agr&eacute;geant les mises &agrave; jour des politiques gouvernementales en temps r&eacute;el</li><li>Flux de donn&eacute;es avec Google Data Studio, Apps Script et Zapier pour visualiser les scores par tranches</li><li>Microsite d'int&eacute;gration clients &eacute;conomisant plus de 50 heures facturables par an</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">R&eacute;seaux Sociaux et Communication</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Croissance de 154% en un an (3 400 &rarr; 8 700+ abonn&eacute;s) en tant que seul strat&egrave;ge</li><li>Publication automatis&eacute;e avec Zapier et Apps Script &mdash; sans intervention manuelle</li><li>Seul point de contact pour toutes les communications entrantes</li></ul></div></div>
+      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Relation Client</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Case Studies</div><div class="section-title">How I Work</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Casos de Estudio</div><div class="section-title">C&oacute;mo trabajo</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">&Eacute;tudes de Cas</div><div class="section-title">Comment je travaille</div></div>
+
+    <div data-lang="en">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Scattered Onboarding &rarr; Self-Service Portal</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problem</div><p>Lawyers and staff were sending individual emails, making phone calls, and answering the same questions for every new client.</p><div class="case-label">Solution</div><p>Centralized onboarding microsite on Squarespace: 6 pages, document uploads, FAQ with keyword search. Mobile-first responsive design.</p><div class="case-label">Result</div><p>Replaced the entire fragmented process. 50+ hours of billable time saved per year.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">No Data &rarr; Real-Time Policy Tracking System</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problem</div><p>No centralized data on government program changes. Advice based on intuition.</p><div class="case-label">Solution</div><p>Custom data scrapers &rarr; Google Sheets via Apps Script &rarr; Google Data Studio dashboards. Automated social media announcements via Zapier.</p><div class="case-label">Result</div><p>Team operates with real-time data. Advising shifted from intuition-based to data-driven.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Ad-Hoc Prep &rarr; 300+ Standardized Consultations/Year</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problem</div><p>Each team member prepared consultations differently. Lawyers spent meeting time on basic information gathering.</p><div class="case-label">Solution</div><p>Structured intake system: identity verification, eligibility assessment, scoring projections, document review &mdash; all standardized.</p><div class="case-label">Result</div><p>Prep time cut in half. 40+ hours saved per year. Lawyers walk into every meeting fully briefed.</p></div></div></div>
+    </div>
+    <div data-lang="es">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Incorporaci&oacute;n dispersa &rarr; Portal de autoservicio</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problema</div><p>Correos individuales, llamadas y las mismas preguntas para cada nuevo cliente.</p><div class="case-label">Soluci&oacute;n</div><p>Micrositio centralizado en Squarespace: 6 p&aacute;ginas, carga de documentos, FAQs con b&uacute;squeda. Dise&ntilde;o responsive mobile-first.</p><div class="case-label">Resultado</div><p>Proceso fragmentado reemplazado. M&aacute;s de 50 horas facturables ahorradas al a&ntilde;o.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Sin datos &rarr; Seguimiento de pol&iacute;ticas en tiempo real</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problema</div><p>Sin datos centralizados sobre cambios gubernamentales.</p><div class="case-label">Soluci&oacute;n</div><p>Scrapers &rarr; Google Sheets v&iacute;a Apps Script &rarr; dashboards en Google Data Studio. Anuncios autom&aacute;ticos v&iacute;a Zapier.</p><div class="case-label">Resultado</div><p>Equipo opera con datos en tiempo real. Asesoramiento basado en datos.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Preparaci&oacute;n improvisada &rarr; 300+ consultas estandarizadas</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Problema</div><p>Cada miembro preparaba consultas de forma diferente.</p><div class="case-label">Soluci&oacute;n</div><p>Sistema de admisi&oacute;n estructurado: verificaci&oacute;n, evaluaci&oacute;n, proyecciones y revisi&oacute;n documental estandarizada.</p><div class="case-label">Resultado</div><p>Tiempo de preparaci&oacute;n reducido a la mitad. M&aacute;s de 40 horas ahorradas al a&ntilde;o.</p></div></div></div>
+    </div>
+    <div data-lang="fr">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Int&eacute;gration dispers&eacute;e &rarr; Portail en libre-service</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Probl&egrave;me</div><p>Courriels individuels, appels et m&ecirc;mes questions pour chaque nouveau client.</p><div class="case-label">Solution</div><p>Microsite centralis&eacute; sur Squarespace : 6 pages, t&eacute;l&eacute;chargement de documents, FAQ avec recherche. Design responsive mobile-first.</p><div class="case-label">R&eacute;sultat</div><p>Processus fragment&eacute; remplac&eacute;. Plus de 50 heures facturables &eacute;conomis&eacute;es par an.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Aucune donn&eacute;e &rarr; Suivi des politiques en temps r&eacute;el</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Probl&egrave;me</div><p>Pas de donn&eacute;es centralis&eacute;es sur les changements gouvernementaux.</p><div class="case-label">Solution</div><p>Scrapers &rarr; Google Sheets via Apps Script &rarr; tableaux de bord Google Data Studio. Annonces automatiques via Zapier.</p><div class="case-label">R&eacute;sultat</div><p>&Eacute;quipe travaille avec des donn&eacute;es en temps r&eacute;el.</p></div></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Pr&eacute;paration ad hoc &rarr; 300+ consultations standardis&eacute;es</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><div class="case-body-inner"><div class="case-label">Probl&egrave;me</div><p>Chaque membre pr&eacute;parait diff&eacute;remment. Avocats perdaient du temps sur des informations basiques.</p><div class="case-label">Solution</div><p>Syst&egrave;me d'admission structur&eacute; : v&eacute;rification, &eacute;valuation, projections et revue documentaire standardis&eacute;es.</p><div class="case-label">R&eacute;sultat</div><p>Temps de pr&eacute;paration r&eacute;duit de moiti&eacute;. Plus de 40 heures &eacute;conomis&eacute;es par an.</p></div></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Capabilities</div><div class="section-title">Skills &amp; Tools</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Capacidades</div><div class="section-title">Habilidades y Herramientas</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">Capacit&eacute;s</div><div class="section-title">Comp&eacute;tences et Outils</div></div>
+
+    <div class="skills-grid" data-lang="en">
+      <div class="skill-group"><h4>Automation &amp; Data</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
+      <div class="skill-group"><h4>Operations &amp; Process</h4><p>Workflow design &middot; Intake systems &middot; Process mapping &middot; Onboarding portals &middot; Data pipelines &middot; Inquiry tracking</p></div>
+      <div class="skill-group"><h4>Communication &amp; Management</h4><p>Client engagement &middot; Stakeholder management &middot; Content strategy &middot; Cross-functional coordination &middot; Editorial writing &middot; Bilingual content</p></div>
+      <div class="skill-group"><h4>Web &amp; Content</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Social media management &middot; Copywriting &middot; Brand-consistent design</p></div>
+    </div>
+    <div class="skills-grid" data-lang="es">
+      <div class="skill-group"><h4>Automatizaci&oacute;n y Datos</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
+      <div class="skill-group"><h4>Operaciones y Procesos</h4><p>Dise&ntilde;o de flujos &middot; Sistemas de admisi&oacute;n &middot; Mapeo de procesos &middot; Portales de incorporaci&oacute;n &middot; Flujos de datos</p></div>
+      <div class="skill-group"><h4>Comunicaci&oacute;n y Gesti&oacute;n</h4><p>Relaci&oacute;n con el cliente &middot; Gesti&oacute;n de stakeholders &middot; Estrategia de contenido &middot; Coordinaci&oacute;n interfuncional &middot; Redacci&oacute;n editorial</p></div>
+      <div class="skill-group"><h4>Web y Contenido</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gesti&oacute;n de redes sociales &middot; Copywriting &middot; Dise&ntilde;o de marca</p></div>
+    </div>
+    <div class="skills-grid" data-lang="fr">
+      <div class="skill-group"><h4>Automatisation et Donn&eacute;es</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
+      <div class="skill-group"><h4>Op&eacute;rations et Processus</h4><p>Conception de flux &middot; Syst&egrave;mes d'admission &middot; Cartographie de processus &middot; Portails d'int&eacute;gration &middot; Flux de donn&eacute;es</p></div>
+      <div class="skill-group"><h4>Communication et Gestion</h4><p>Relation client &middot; Gestion des parties prenantes &middot; Strat&eacute;gie de contenu &middot; Coordination interfonctionnelle &middot; R&eacute;daction &eacute;ditoriale</p></div>
+      <div class="skill-group"><h4>Web et Contenu</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gestion des r&eacute;seaux sociaux &middot; R&eacute;daction &middot; Design de marque</p></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Multilingual</div><div class="section-title">Languages</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Multiling&uuml;e</div><div class="section-title">Idiomas</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">Multilingue</div><div class="section-title">Langues</div></div>
+
+    <div class="lang-grid" data-lang="en">
+      <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Native</span></div>
+      <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Native</span></div>
+      <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">C1</span></div>
+      <div class="lang-item"><span class="lang-name">French</span><span class="lang-level">C1</span></div>
+    </div>
+    <div class="lang-grid" data-lang="es">
+      <div class="lang-item"><span class="lang-name">Ingl&eacute;s</span><span class="lang-level">Nativo</span></div>
+      <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Nativo</span></div>
+      <div class="lang-item"><span class="lang-name">Espa&ntilde;ol</span><span class="lang-level">C1</span></div>
+      <div class="lang-item"><span class="lang-name">Franc&eacute;s</span><span class="lang-level">C1</span></div>
+    </div>
+    <div class="lang-grid" data-lang="fr">
+      <div class="lang-item"><span class="lang-name">Anglais</span><span class="lang-level">Natif</span></div>
+      <div class="lang-item"><span class="lang-name">Philippin</span><span class="lang-level">Natif</span></div>
+      <div class="lang-item"><span class="lang-name">Espagnol</span><span class="lang-level">C1</span></div>
+      <div class="lang-item"><span class="lang-name">Fran&ccedil;ais</span><span class="lang-level">C1</span></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Education</div><div class="section-title">Academic Background</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Formaci&oacute;n</div><div class="section-title">Formaci&oacute;n Acad&eacute;mica</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">Formation</div><div class="section-title">Parcours Acad&eacute;mique</div></div>
+
+    <div data-lang="en"><div class="edu-block"><div class="edu-degree">Master in Business Diplomacy</div><div class="edu-school">University of Deusto &middot; Bilbao, Spain</div></div></div>
+    <div data-lang="es"><div class="edu-block"><div class="edu-degree">M&aacute;ster en Diplomacia Empresarial</div><div class="edu-school">Universidad de Deusto &middot; Bilbao, Espa&ntilde;a</div></div></div>
+    <div data-lang="fr"><div class="edu-block"><div class="edu-degree">Master en Diplomatie des Affaires</div><div class="edu-school">Universit&eacute; de Deusto &middot; Bilbao, Espagne</div></div></div>
+
+    <hr class="divider">
+
+    <div class="section" data-lang="en"><div class="section-label">Connect</div><div class="section-title">Get in Touch</div></div>
+    <div class="section" data-lang="es"><div class="section-label">Conectar</div><div class="section-title">Contacto</div></div>
+    <div class="section" data-lang="fr"><div class="section-label">Connecter</div><div class="section-title">Contact</div></div>
+
+    <div class="contact-row" data-lang="en">
+      <a href="mailto:your@email.com" class="contact-link">&#x2709; Email</a>
+      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">&#x2197; LinkedIn</a>
+    </div>
+    <div class="contact-row" data-lang="es">
+      <a href="mailto:your@email.com" class="contact-link">&#x2709; Correo</a>
+      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">&#x2197; LinkedIn</a>
+    </div>
+    <div class="contact-row" data-lang="fr">
+      <a href="mailto:your@email.com" class="contact-link">&#x2709; Courriel</a>
+      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">&#x2197; LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bar">Augusto Delfin &middot; Bilbao, Spain &middot; 2026</div>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(function(el) {
+    if (el.dataset.lang === lang) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  });
+}
+
+function togglePillar(header) {
+  header.closest('.pillar').classList.toggle('open');
+}
+
+function toggleCase(header) {
+  header.closest('.case-study').classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-lang="en"]').forEach(function(el) {
+    el.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
