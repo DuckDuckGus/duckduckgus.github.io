@@ -98,8 +98,8 @@ body {
 }
 .hero-inner { display: flex; gap: 48px; align-items: flex-start; }
 .photo {
-  width: 132px;
-  height: 132px;
+  width: 160px;
+  height: 160px;
   min-width: 132px;
   border-radius: 9px;
   background: var(--navy-light);
@@ -122,14 +122,14 @@ body {
   letter-spacing: -0.3px;
 }
 .tagline {
-  font-size: 20px;
+  font-size: 16px;
   color: var(--text-muted-dark);
   line-height: 1.65;
-  max-width: 750px;
+  max-width: 1000px;
 }
 .hero-meta {
   margin-top: 24px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-muted-dark);
   letter-spacing: 0.3px;
 }
@@ -224,19 +224,19 @@ body {
   border-top: 3px solid var(--navy);
 }
 .pillar-header {
-  padding: 24px 27px 18px;
+  padding: 24px 27px 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   user-select: none;
-  background: var(--cream);
+  background: var(--navy-light);
   border-bottom: 1px solid var(--border-light);
 }
 .pillar-title {
   font-weight: 700;
   font-size: 20px;
-  color: var(--navy);
+  color: var(--white);
   letter-spacing: 0.2px;
   flex: 1;
 }
@@ -279,7 +279,7 @@ body {
   border-left: 6px solid var(--navy);
   border-radius: 3px;
   margin-bottom: 18px;
-  max-width: 1090px;
+  max-width: 2090px;
   margin: 0 auto 18px auto;
 }
 .case-header {
@@ -292,20 +292,30 @@ body {
 }
 .case-title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 21px;
   color: var(--navy);
   flex: 1;
 }
 .case-chevron {
   font-size: 18.7px;
   color: var(--text-muted-light);
-  transition: transform 0.3s var(--ease);
+  transition: transform 0.5s var(--ease);
 }
 .case-study.open .case-chevron { transform: rotate(180deg); }
 .case-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s var(--ease);
+}
+.case-body ul { padding: 0px 27px 24px 60px; }
+.case-body li {
+  font-size: 19px;
+  color: var(--text-muted-light);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+  list-style: disc;
 }
 .case-study.open .case-body { max-height: 900px; }
 .case-body-inner { padding: 0 30px 30px; }
@@ -316,7 +326,7 @@ body {
   text-transform: uppercase;
   color: var(--navy-light);
   margin-bottom: 4px;
-  margin-top: 14px;
+  margin-top: 0px;
 }
 .case-label:first-child { margin-top: 0; }
 .case-body p {
@@ -497,7 +507,7 @@ body {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 2100px) {
   .projects-carousel {
     max-width: 100%;
     margin: 20px 0;
@@ -544,7 +554,7 @@ body {
   display: flex; 
   gap: 18px; 
   flex-wrap: wrap;
-  max-width: 1050px;
+  max-width: 2100px;
   margin: 0 auto;
 }
 .contact-link {
@@ -616,7 +626,9 @@ body {
 <div class="page">
 
   <div class="top-bar">
-    <div class="top-bar-name">Augusto Manuel Legaspi Delfin</div>
+    <div class="top-bar-name" data-lang="en">Augusto Manuel Legaspi Delfin — Business Operations Consultant</div>
+    <div class="top-bar-name" data-lang="es">Augusto Manuel Legaspi Delfin — Consultor de Operaciones Empresariales</div>
+    <div class="top-bar-name" data-lang="fr">Augusto Manuel Legaspi Delfin — Consultant en Opérations d'Entreprise</div>
     <div class="lang-bar">
       <button class="lang-btn active" onclick="switchLang('en')">🇬🇧</button>
       <button class="lang-btn" onclick="switchLang('es')">🇪🇸</button>
@@ -629,9 +641,9 @@ body {
       <div class="photo">A</div>
       <div class="hero-text">
         <h1>Augusto Manuel Legaspi Delfin</h1>
-        <div class="tagline" data-lang="en">I build operational infrastructure so that high-value professionals can focus on the work that generates revenue.</div>
-        <div class="tagline" data-lang="es">Construyo infraestructura operativa para que los profesionales de alto valor se concentren en el trabajo que genera ingresos.</div>
-        <div class="tagline" data-lang="fr">Je construis l'infrastructure op&eacute;rationnelle pour que les professionnels puissent se concentrer sur le travail qui g&eacute;n&egrave;re des revenus.</div>
+        <div class="tagline" data-lang="en">I streamline workflows, boost client engagement, and grow brand presence by automating routine tasks in business processes, social media, and data analytics. This clears the way for high-level professionals to focus on work that generates revenue.</div>
+        <div class="tagline" data-lang="es">Optimizo los flujos de trabajo, impulso el compromiso del cliente y aumento la presencia de marca mediante la automatización de tareas rutinarias en los procesos de negocio, redes sociales y análisis de datos. Esto despeja el camino para que los profesionales de alto nivel se enfoquen en el trabajo que genera ingresos.</div>
+        <div class="tagline" data-lang="fr">J'optimise les flux de travail, renforce l'engagement client et développe la présence de la marque en automatisant les tâches récurrentes dans les processus métier, les réseaux sociaux et l'analyse de données. Cela permet aux professionnels de haut niveau de se consacrer pleinement aux activités génératrices de revenus.</div>
         <div class="hero-meta">
           <div data-lang="en">
             <span>&#x1F4CD; Bilbao, Spain</span>
@@ -887,20 +899,20 @@ body {
     <div class="section" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
     <div class="section" data-lang="fr"><div class="section-label">Expertises</div><div class="section-title">Ce que je fais</div></div>
 
-    <div class="pillars" data-lang="en">
-      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Legal Operations &amp; Automation</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Automated system aggregating real-time government policy updates across federal and provincial programs</li><li>Data pipeline with Google Data Studio, Apps Script &amp; Zapier visualizing applicant scores by eligibility bands</li><li>Centralized client onboarding microsite saving 50+ hours of billable time per year</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Social Media &amp; Communications</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>154% social media growth in one year (3,400 &rarr; 8,700+ followers) as sole strategist</li><li>End-to-end automated content publishing via Zapier &amp; Apps Script &mdash; zero manual intervention</li><li>Sole point of contact for all inbound communications across web, social &amp; email</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Client Engagement</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>300+ consultations managed annually: intake, identity verification, eligibility assessments &amp; scoring projections</li><li>Structured intake system saving 40+ administrative hours per year</li><li>Bilingual support for French-speaking clients navigating documentation</li></ul></div></div>
+    <div data-lang="en">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Legal Operations &amp; Automation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Automated system aggregating real-time government policy updates across federal and provincial programs</li><li>Data pipeline with Google Data Studio, Apps Script &amp; Zapier visualizing applicant scores by eligibility bands</li><li>Centralized client onboarding microsite saving 50+ hours of billable time per year</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Social Media &amp; Communications</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>154% social media growth in one year (3,400 &rarr; 8,700+ followers) as sole strategist</li><li>End-to-end automated content publishing via Zapier &amp; Apps Script &mdash; zero manual intervention</li><li>Sole point of contact for all inbound communications across web, social &amp; email</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Client Engagement</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>300+ consultations managed annually: intake, identity verification, eligibility assessments &amp; scoring projections</li><li>Structured intake system saving 40+ administrative hours per year</li><li>Bilingual support for French-speaking clients navigating documentation</li></ul></div></div>
     </div>
-    <div class="pillars" data-lang="es">
-      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Operaciones Legales y Automatizaci&oacute;n</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Sistema automatizado que agrega actualizaciones de pol&iacute;ticas gubernamentales en tiempo real</li><li>Flujo de datos con Google Data Studio, Apps Script y Zapier para visualizar puntajes por bandas de elegibilidad</li><li>Micrositio de incorporaci&oacute;n de clientes ahorrando m&aacute;s de 50 horas facturables al a&ntilde;o</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Redes Sociales y Comunicaci&oacute;n</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Crecimiento del 154% en un a&ntilde;o (3.400 &rarr; 8.700+ seguidores) como &uacute;nico estratega</li><li>Publicaci&oacute;n automatizada con Zapier y Apps Script &mdash; sin intervenci&oacute;n manual</li><li>&Uacute;nico punto de contacto para comunicaciones entrantes en web, redes y correo</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Relaci&oacute;n con el Cliente</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>M&aacute;s de 300 consultas gestionadas al a&ntilde;o: admisi&oacute;n, verificaci&oacute;n, evaluaciones y proyecciones</li><li>Sistema de admisi&oacute;n que ahorr&oacute; m&aacute;s de 40 horas administrativas al a&ntilde;o</li><li>Soporte biling&uuml;e para clientes franc&oacute;fonos</li></ul></div></div>
+    <div data-lang="es">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Operaciones Legales y Automatizaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Sistema automatizado que agrega actualizaciones de pol&iacute;ticas gubernamentales en tiempo real</li><li>Flujo de datos con Google Data Studio, Apps Script y Zapier para visualizar puntajes por bandas de elegibilidad</li><li>Micrositio de incorporaci&oacute;n de clientes ahorrando m&aacute;s de 50 horas facturables al a&ntilde;o</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Redes Sociales y Comunicaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Crecimiento del 154% en un a&ntilde;o (3.400 &rarr; 8.700+ seguidores) como &uacute;nico estratega</li><li>Publicaci&oacute;n automatizada con Zapier y Apps Script &mdash; sin intervenci&oacute;n manual</li><li>&Uacute;nico punto de contacto para comunicaciones entrantes en web, redes y correo</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relaci&oacute;n con el Cliente</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>M&aacute;s de 300 consultas gestionadas al a&ntilde;o: admisi&oacute;n, verificaci&oacute;n, evaluaciones y proyecciones</li><li>Sistema de admisi&oacute;n que ahorr&oacute; m&aacute;s de 40 horas administrativas al a&ntilde;o</li><li>Soporte biling&uuml;e para clientes franc&oacute;fonos</li></ul></div></div>
     </div>
-    <div class="pillars" data-lang="fr">
-      <div class="pillar open"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Op&eacute;rations Juridiques et Automatisation</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Syst&egrave;me automatis&eacute; agr&eacute;geant les mises &agrave; jour des politiques gouvernementales en temps r&eacute;el</li><li>Flux de donn&eacute;es avec Google Data Studio, Apps Script et Zapier pour visualiser les scores par tranches</li><li>Microsite d'int&eacute;gration clients &eacute;conomisant plus de 50 heures facturables par an</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">R&eacute;seaux Sociaux et Communication</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Croissance de 154% en un an (3 400 &rarr; 8 700+ abonn&eacute;s) en tant que seul strat&egrave;ge</li><li>Publication automatis&eacute;e avec Zapier et Apps Script &mdash; sans intervention manuelle</li><li>Seul point de contact pour toutes les communications entrantes</li></ul></div></div>
-      <div class="pillar"><div class="pillar-header" onclick="togglePillar(this)"><span class="pillar-title">Relation Client</span><span class="pillar-chevron">&#x25BE;</span></div><div class="pillar-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
+    <div data-lang="fr">
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Op&eacute;rations Juridiques et Automatisation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Syst&egrave;me automatis&eacute; agr&eacute;geant les mises &agrave; jour des politiques gouvernementales en temps r&eacute;el</li><li>Flux de donn&eacute;es avec Google Data Studio, Apps Script et Zapier pour visualiser les scores par tranches</li><li>Microsite d'int&eacute;gration clients &eacute;conomisant plus de 50 heures facturables par an</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">R&eacute;seaux Sociaux et Communication</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Croissance de 154% en un an (3 400 &rarr; 8 700+ abonn&eacute;s) en tant que seul strat&egrave;ge</li><li>Publication automatis&eacute;e avec Zapier et Apps Script &mdash; sans intervention manuelle</li><li>Seul point de contact pour toutes les communications entrantes</li></ul></div></div>
+      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relation Client</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
     </div>
 
     <hr class="divider">
@@ -996,16 +1008,17 @@ body {
     <div class="section" data-lang="fr"><div class="section-label">Connecter</div><div class="section-title">Contact</div></div>
 
     <div class="contact-row" data-lang="en">
-      <a href="mailto:your@email.com" class="contact-link"><img src="email-ico.png" alt="Email"> Email</a>
-      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Email"> Email</a>
+      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> Phone</a>
     </div>
     <div class="contact-row" data-lang="es">
-      <a href="mailto:your@email.com" class="contact-link"><img src="email-ico.png" alt="Correo"> Correo</a>
-      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Correo"> Correo</a>
+      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
     </div>
     <div class="contact-row" data-lang="fr">
-      <a href="mailto:your@email.com" class="contact-link"><img src="email-ico.png" alt="Courriel"> Courriel</a>
-      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Courriel"> Courriel</a>
+      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
     </div>
 
   </div>
