@@ -58,6 +58,16 @@ body {
   align-items: center;
   border-bottom: 3px solid var(--white);
 }
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.logo-img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
 .top-bar-name {
   font-family: var(--font);
   font-size: 20px;
@@ -686,9 +696,12 @@ body {
 <div class="page">
 
   <div class="top-bar">
-    <div class="top-bar-name" data-lang="en">Augusto Manuel Legaspi Delfin — Business Operations Consultant</div>
-    <div class="top-bar-name" data-lang="es">Augusto Manuel Legaspi Delfin — Consultor de Operaciones Empresariales</div>
-    <div class="top-bar-name" data-lang="fr">Augusto Manuel Legaspi Delfin — Consultant en Opérations d'Entreprise</div>
+    <div class="top-bar-left">
+      <img src="logo.jpg" alt="Logo" class="logo-img">
+      <div class="top-bar-name" data-lang="en">Augusto Manuel Legaspi Delfin — Business Operations Consultant</div>
+      <div class="top-bar-name" data-lang="es">Augusto Manuel Legaspi Delfin — Consultor de Operaciones Empresariales</div>
+      <div class="top-bar-name" data-lang="fr">Augusto Manuel Legaspi Delfin — Consultant en Opérations d'Entreprise</div>
+    </div>
     <div class="lang-bar">
       <button class="lang-btn active" onclick="switchLang('en')">🇬🇧</button>
       <button class="lang-btn" onclick="switchLang('es')">🇪🇸</button>
