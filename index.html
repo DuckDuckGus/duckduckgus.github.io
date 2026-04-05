@@ -27,6 +27,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
@@ -437,7 +438,7 @@ body {
   position: relative;
   overflow: hidden;
   margin: 10px 0;
-  max-width: 1050px;
+  max-width: 980x;
   margin: 10px auto;
 }
 
@@ -450,6 +451,14 @@ body {
   gap: 0;
   padding: 0;
   margin: 0;
+  cursor: grab;
+  user-select: none;
+}
+
+.projects-container.grabbing {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
 }
 
 .projects-container::-webkit-scrollbar {
@@ -596,7 +605,7 @@ body {
   background: var(--navy);
   padding: 20px 48px;
   text-align: center;
-  font-size: 20.4px;
+  font-size: 12.5px;
   color: var(--text-muted-dark);
   letter-spacing: 0.5px;
   border-top: 2px solid var(--white);
@@ -660,6 +669,15 @@ body {
 @media (max-width: 640px) {
   .nav-menu { gap: 12px; padding: 12px; }
   .nav-link { font-size: 11px; }
+}
+
+/* Section Fade-In Animation */
+@keyframes sectionFadeIn {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in-active {
+  animation: sectionFadeIn 1.2s var(--ease);
 }
 </style>
 </head>
@@ -734,28 +752,28 @@ body {
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
-  <div class="metrics-bar anim anim-d1" data-lang="en">
+  <div class="metrics-bar anim anim-d1 reveal" data-lang="en">
     <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Social Media Growth by Automated Pipelines
 
 </div></div>
     <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultations Closed Monthly via Intake Pipeline</div></div>
     <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Billable Hours Saved / Year</div></div>
   </div>
-  <div class="metrics-bar" data-lang="es">
+  <div class="metrics-bar reveal" data-lang="es">
     <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Crecimiento en Redes por Pipelines Automatizados
 </div></div>
     <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultas Cerradas al Mes vía Pipeline de Admisión
 </div></div>
     <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Horas Facturables Ahorradas</div></div>
   </div>
-  <div class="metrics-bar" data-lang="fr">
+  <div class="metrics-bar reveal" data-lang="fr">
     <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Croissance Réseaux par Pipelines Automatisés</div></div>
     <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultations Conclues par Mois via Pipeline d'Admission</div></div>
     <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Heures Facturables &Eacute;conomis&eacute;es</div></div>
   </div>
   <div id="about" class="content">
 
-    <div class="section anim anim-d2" data-lang="en">
+    <div class="section anim anim-d2 reveal" data-lang="en">
     <div class="section-label">Profile</div>
     <div class="section-title">About</div>
     <p>
@@ -778,7 +796,7 @@ body {
       Above all, I bring a keen eye for identifying opportunities and inefficiencies. I excel at recognizing manual, repetitive tasks that create bottlenecks and transforming them into streamlined, automated workflows that drive meaningful business improvement.
     </p>
     </div>
-      <div class="section anim anim-d2" data-lang="es">
+      <div class="section anim anim-d2 reveal" data-lang="es">
     <div class="section-label">Perfil</div>
     <div class="section-title">Sobre mí</div>
     <p>
@@ -801,7 +819,7 @@ body {
       Sobre todo, aporto una gran capacidad para identificar oportunidades e ineficiencias. Destaco en detectar tareas manuales y repetitivas que generan cuellos de botella y en transformarlas en procesos automatizados y eficientes que aportan valor real al negocio.
     </p>
     </div>
-    <div class="section anim anim-d2" data-lang="fr">
+    <div class="section anim anim-d2 reveal" data-lang="fr">
     <div class="section-label">Profil</div>
     <div class="section-title">À propos</div>
     <p>
@@ -829,11 +847,11 @@ body {
 
     <hr class="divider" id="projects">
 
-    <div class="section" data-lang="en"><div class="section-label">Portfolio</div><div class="section-title">My Projects</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Portfolio</div><div class="section-title">Mis Proyectos</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Portfolio</div><div class="section-title">Mes Projets</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Portfolio</div><div class="section-title">My Projects</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Portfolio</div><div class="section-title">Mis Proyectos</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Portfolio</div><div class="section-title">Mes Projets</div></div>
 
-    <div class="projects-carousel" data-lang="en">
+    <div class="projects-carousel reveal" data-lang="en">
       <div class="projects-container">
         <div class="project-card">
           <h3>Client Onboarding Microsite</h3>
@@ -876,7 +894,7 @@ body {
       </div>
     </div>
 
-    <div class="projects-carousel" data-lang="es">
+    <div class="projects-carousel reveal" data-lang="es">
       <div class="projects-container">
         <div class="project-card">
           <h3>Micrositio de Incorporación de Clientes</h3>
@@ -919,7 +937,7 @@ body {
       </div>
     </div>
 
-    <div class="projects-carousel" data-lang="fr">
+    <div class="projects-carousel reveal" data-lang="fr">
       <div class="projects-container">
         <div class="project-card">
           <h3>Microsite d'Intégration Client</h3>
@@ -964,21 +982,21 @@ body {
 
     <hr class="divider" id="expertise">
 
-    <div class="section" data-lang="en"><div class="section-label">Expertise</div><div class="section-title">What I Do</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Expertises</div><div class="section-title">Ce que je fais</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Expertise</div><div class="section-title">What I Do</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Expertises</div><div class="section-title">Ce que je fais</div></div>
 
-    <div data-lang="en">
+    <div data-lang="en" class="reveal">
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Legal Operations &amp; Automation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Automated system aggregating real-time government policy updates across federal and provincial programs</li><li>Data pipeline with Google Data Studio, Apps Script &amp; Zapier visualizing applicant scores by eligibility bands</li><li>Centralized client onboarding microsite saving 50+ hours of billable time per year</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Social Media &amp; Communications</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>154% social media growth in one year (3,400 &rarr; 8,700+ followers) as sole strategist</li><li>End-to-end automated content publishing via Zapier &amp; Apps Script &mdash; zero manual intervention</li><li>Sole point of contact for all inbound communications across web, social &amp; email</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Client Engagement</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>300+ consultations managed annually: intake, identity verification, eligibility assessments &amp; scoring projections</li><li>Structured intake system saving 40+ administrative hours per year</li><li>Bilingual support for French-speaking clients navigating documentation</li></ul></div></div>
     </div>
-    <div data-lang="es">
+    <div data-lang="es" class="reveal">
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Operaciones Legales y Automatizaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Sistema automatizado que agrega actualizaciones de pol&iacute;ticas gubernamentales en tiempo real</li><li>Flujo de datos con Google Data Studio, Apps Script y Zapier para visualizar puntajes por bandas de elegibilidad</li><li>Micrositio de incorporaci&oacute;n de clientes ahorrando m&aacute;s de 50 horas facturables al a&ntilde;o</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Redes Sociales y Comunicaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Crecimiento del 154% en un a&ntilde;o (3.400 &rarr; 8.700+ seguidores) como &uacute;nico estratega</li><li>Publicaci&oacute;n automatizada con Zapier y Apps Script &mdash; sin intervenci&oacute;n manual</li><li>&Uacute;nico punto de contacto para comunicaciones entrantes en web, redes y correo</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relaci&oacute;n con el Cliente</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>M&aacute;s de 300 consultas gestionadas al a&ntilde;o: admisi&oacute;n, verificaci&oacute;n, evaluaciones y proyecciones</li><li>Sistema de admisi&oacute;n que ahorr&oacute; m&aacute;s de 40 horas administrativas al a&ntilde;o</li><li>Soporte biling&uuml;e para clientes franc&oacute;fonos</li></ul></div></div>
     </div>
-    <div data-lang="fr">
+    <div data-lang="fr" class="reveal">
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Op&eacute;rations Juridiques et Automatisation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Syst&egrave;me automatis&eacute; agr&eacute;geant les mises &agrave; jour des politiques gouvernementales en temps r&eacute;el</li><li>Flux de donn&eacute;es avec Google Data Studio, Apps Script et Zapier pour visualiser les scores par tranches</li><li>Microsite d'int&eacute;gration clients &eacute;conomisant plus de 50 heures facturables par an</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">R&eacute;seaux Sociaux et Communication</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Croissance de 154% en un an (3 400 &rarr; 8 700+ abonn&eacute;s) en tant que seul strat&egrave;ge</li><li>Publication automatis&eacute;e avec Zapier et Apps Script &mdash; sans intervention manuelle</li><li>Seul point de contact pour toutes les communications entrantes</li></ul></div></div>
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relation Client</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
@@ -986,23 +1004,23 @@ body {
 
     <hr class="divider" id="skills">
 
-    <div class="section" data-lang="en"><div class="section-label">Capabilities</div><div class="section-title">Skills &amp; Tools</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Capacidades</div><div class="section-title">Habilidades y Herramientas</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Capacit&eacute;s</div><div class="section-title">Comp&eacute;tences et Outils</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Capabilities</div><div class="section-title">Skills &amp; Tools</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Capacidades</div><div class="section-title">Habilidades y Herramientas</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Capacit&eacute;s</div><div class="section-title">Comp&eacute;tences et Outils</div></div>
 
-    <div class="skills-grid" data-lang="en">
+    <div class="skills-grid reveal" data-lang="en">
       <div class="skill-group"><h4>Automation &amp; Data</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
       <div class="skill-group"><h4>Operations &amp; Process</h4><p>Workflow design &middot; Intake systems &middot; Process mapping &middot; Onboarding portals &middot; Data pipelines &middot; Inquiry tracking</p></div>
       <div class="skill-group"><h4>Communication &amp; Management</h4><p>Client engagement &middot; Stakeholder management &middot; Content strategy &middot; Cross-functional coordination &middot; Editorial writing &middot; Bilingual content</p></div>
       <div class="skill-group"><h4>Web &amp; Content</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Social media management &middot; Copywriting &middot; Brand-consistent design</p></div>
     </div>
-    <div class="skills-grid" data-lang="es">
+    <div class="skills-grid reveal" data-lang="es">
       <div class="skill-group"><h4>Automatizaci&oacute;n y Datos</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
       <div class="skill-group"><h4>Operaciones y Procesos</h4><p>Dise&ntilde;o de flujos &middot; Sistemas de admisi&oacute;n &middot; Mapeo de procesos &middot; Portales de incorporaci&oacute;n &middot; Flujos de datos</p></div>
       <div class="skill-group"><h4>Comunicaci&oacute;n y Gesti&oacute;n</h4><p>Relaci&oacute;n con el cliente &middot; Gesti&oacute;n de stakeholders &middot; Estrategia de contenido &middot; Coordinaci&oacute;n interfuncional &middot; Redacci&oacute;n editorial</p></div>
       <div class="skill-group"><h4>Web y Contenido</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gesti&oacute;n de redes sociales &middot; Copywriting &middot; Dise&ntilde;o de marca</p></div>
     </div>
-    <div class="skills-grid" data-lang="fr">
+    <div class="skills-grid reveal" data-lang="fr">
       <div class="skill-group"><h4>Automatisation et Donn&eacute;es</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
       <div class="skill-group"><h4>Op&eacute;rations et Processus</h4><p>Conception de flux &middot; Syst&egrave;mes d'admission &middot; Cartographie de processus &middot; Portails d'int&eacute;gration &middot; Flux de donn&eacute;es</p></div>
       <div class="skill-group"><h4>Communication et Gestion</h4><p>Relation client &middot; Gestion des parties prenantes &middot; Strat&eacute;gie de contenu &middot; Coordination interfonctionnelle &middot; R&eacute;daction &eacute;ditoriale</p></div>
@@ -1011,23 +1029,23 @@ body {
 
     <hr class="divider" id="languages">
 
-    <div class="section" data-lang="en"><div class="section-label">Multilingual</div><div class="section-title">Languages</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Multiling&uuml;e</div><div class="section-title">Idiomas</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Multilingue</div><div class="section-title">Langues</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Multilingual</div><div class="section-title">Languages</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Multiling&uuml;e</div><div class="section-title">Idiomas</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Multilingue</div><div class="section-title">Langues</div></div>
 
-    <div class="lang-grid" data-lang="en">
+    <div class="lang-grid reveal" data-lang="en">
       <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Native</span></div>
       <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Native</span></div>
       <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">C1</span></div>
       <div class="lang-item"><span class="lang-name">French</span><span class="lang-level">C1</span></div>
     </div>
-    <div class="lang-grid" data-lang="es">
+    <div class="lang-grid reveal" data-lang="es">
       <div class="lang-item"><span class="lang-name">Ingl&eacute;s</span><span class="lang-level">Nativo</span></div>
       <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Nativo</span></div>
       <div class="lang-item"><span class="lang-name">Espa&ntilde;ol</span><span class="lang-level">C1</span></div>
       <div class="lang-item"><span class="lang-name">Franc&eacute;s</span><span class="lang-level">C1</span></div>
     </div>
-    <div class="lang-grid" data-lang="fr">
+    <div class="lang-grid reveal" data-lang="fr">
       <div class="lang-item"><span class="lang-name">Anglais</span><span class="lang-level">Natif</span></div>
       <div class="lang-item"><span class="lang-name">Philippin</span><span class="lang-level">Natif</span></div>
       <div class="lang-item"><span class="lang-name">Espagnol</span><span class="lang-level">C1</span></div>
@@ -1036,35 +1054,35 @@ body {
 
     <hr class="divider" id="education">
 
-    <div class="section" data-lang="en"><div class="section-label">Education</div><div class="section-title">Academic Background</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Formaci&oacute;n</div><div class="section-title">Formaci&oacute;n Acad&eacute;mica</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Formation</div><div class="section-title">Parcours Acad&eacute;mique</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Education</div><div class="section-title">Academic Background</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Formaci&oacute;n</div><div class="section-title">Formaci&oacute;n Acad&eacute;mica</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Formation</div><div class="section-title">Parcours Acad&eacute;mique</div></div>
 
-    <div data-lang="en"><div class="edu-block"><div class="edu-degree">Master in Business Diplomacy</div><div class="edu-school">University of Deusto &middot; Bilbao, Spain</div></div></div>
-    <div data-lang="es"><div class="edu-block"><div class="edu-degree">M&aacute;ster en Diplomacia Empresarial</div><div class="edu-school">Universidad de Deusto &middot; Bilbao, Espa&ntilde;a</div></div></div>
-    <div data-lang="fr"><div class="edu-block"><div class="edu-degree">Master en Diplomatie des Affaires</div><div class="edu-school">Universit&eacute; de Deusto &middot; Bilbao, Espagne</div></div></div>
+    <div data-lang="en" class="reveal"><div class="edu-block"><div class="edu-degree">Master in Business Diplomacy</div><div class="edu-school">University of Deusto &middot; Bilbao, Spain</div></div></div>
+    <div data-lang="es" class="reveal"><div class="edu-block"><div class="edu-degree">M&aacute;ster en Diplomacia Empresarial</div><div class="edu-school">Universidad de Deusto &middot; Bilbao, Espa&ntilde;a</div></div></div>
+    <div data-lang="fr" class="reveal"><div class="edu-block"><div class="edu-degree">Master en Diplomatie des Affaires</div><div class="edu-school">Universit&eacute; de Deusto &middot; Bilbao, Espagne</div></div></div>
 
-    <div data-lang="en"><div class="edu-block"><div class="edu-degree">Bachelor's in Consular and Diplomatic Affairs</div><div class="edu-school">De La Salle - College of Saint Benilde &middot; Manila, Philippines</div></div></div>
-    <div data-lang="es"><div class="edu-block"><div class="edu-degree">Grado en Asuntos Consulares y Diplomáticos</div><div class="edu-school">De La Salle - Universidad de San Benildo &middot; Manila, Filipinas</div></div></div>
-    <div data-lang="fr"><div class="edu-block"><div class="edu-degree">Licence en Affaires Consulaires et Diplomatiques</div><div class="edu-school">De La Salle - Collège de Saint Benilde &middot; Manille, Philippines</div></div></div>
+    <div data-lang="en" class="reveal"><div class="edu-block"><div class="edu-degree">Bachelor's in Consular and Diplomatic Affairs</div><div class="edu-school">De La Salle - College of Saint Benilde &middot; Manila, Philippines</div></div></div>
+    <div data-lang="es" class="reveal"><div class="edu-block"><div class="edu-degree">Grado en Asuntos Consulares y Diplomáticos</div><div class="edu-school">De La Salle - Universidad de San Benildo &middot; Manila, Filipinas</div></div></div>
+    <div data-lang="fr" class="reveal"><div class="edu-block"><div class="edu-degree">Licence en Affaires Consulaires et Diplomatiques</div><div class="edu-school">De La Salle - Collège de Saint Benilde &middot; Manille, Philippines</div></div></div>
 
     <hr class="divider" id="contact">
 
-    <div class="section" data-lang="en"><div class="section-label">Connect</div><div class="section-title">Get in Touch</div></div>
-    <div class="section" data-lang="es"><div class="section-label">Conectar</div><div class="section-title">Contacto</div></div>
-    <div class="section" data-lang="fr"><div class="section-label">Connecter</div><div class="section-title">Contact</div></div>
+    <div class="section reveal" data-lang="en"><div class="section-label">Connect</div><div class="section-title">Get in Touch</div></div>
+    <div class="section reveal" data-lang="es"><div class="section-label">Conectar</div><div class="section-title">Contacto</div></div>
+    <div class="section reveal" data-lang="fr"><div class="section-label">Connecter</div><div class="section-title">Contact</div></div>
 
-    <div class="contact-row" data-lang="en">
+    <div class="contact-row reveal" data-lang="en">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Email"> Email</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
       <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Phone</a>
     </div>
-    <div class="contact-row" data-lang="es">
+    <div class="contact-row reveal" data-lang="es">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Correo"> Correo</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
       <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telefono</a>
     </div>
-    <div class="contact-row" data-lang="fr">
+    <div class="contact-row reveal" data-lang="fr">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Courriel"> Courriel</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
       <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telephone</a>
@@ -1143,6 +1161,49 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add scroll listeners to all language containers
   document.querySelectorAll('.projects-container').forEach(container => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      container.classList.add('grabbing');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    const handleSnap = () => {
+      if (!isDown) return;
+      isDown = false;
+      container.classList.remove('grabbing');
+      
+      const cards = container.querySelectorAll('.project-card');
+      if (cards.length === 0) return;
+      
+      // Calculate the nearest card index based on current scroll position
+      const cardWidth = cards[0].offsetWidth;
+      const index = Math.round(container.scrollLeft / cardWidth);
+      
+      // Trigger the slide while snapping is still disabled by the 'grabbing' class
+      scrollToProject(index);
+      
+      // Wait for the smooth scroll to finish (approx 500ms) before re-enabling snapping
+      setTimeout(() => {
+        container.classList.remove('grabbing');
+      }, 500);
+    };
+
+    container.addEventListener('mouseleave', handleSnap);
+    container.addEventListener('mouseup', handleSnap);
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2; 
+      container.scrollLeft = scrollLeft - walk;
+    });
+
     container.addEventListener('scroll', function() {
       const carousel = container.closest('.projects-carousel');
       const cards = carousel.querySelectorAll('.project-card');
@@ -1159,6 +1220,47 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dots[index]) dots[index].classList.toggle('active', isActive);
       });
     });
+  });
+
+  // Pulse effect logic for navigation
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      let toPulse = [];
+      // If target is the About container, pulse its active children
+      if (target.classList.contains('content')) {
+        toPulse = Array.from(target.children).filter(c => c.classList.contains('section') && c.classList.contains('active'));
+      } else if (target.tagName === 'HR') {
+        // If target is a divider, pulse the visible sections that follow it
+        let next = target.nextElementSibling;
+        while (next && next.tagName !== 'HR') {
+          if (next.classList.contains('active')) toPulse.push(next);
+          next = next.nextElementSibling;
+        }
+      }
+
+      toPulse.forEach(el => {
+        el.classList.remove('fade-in-active');
+        void el.offsetWidth; // Trigger reflow to restart animation
+        el.classList.add('fade-in-active');
+      });
+    });
+  });
+
+  // Scroll reveal observer
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
   });
 });
 </script>
