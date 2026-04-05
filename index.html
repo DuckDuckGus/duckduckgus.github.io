@@ -274,7 +274,7 @@ body {
 
 /* Case Studies */
 .case-study {
-  background: var(--white);
+  background: var(--navy-light);
   border: 1px solid var(--border-light);
   border-left: 6px solid var(--navy);
   border-radius: 3px;
@@ -293,7 +293,7 @@ body {
 .case-title {
   font-weight: 700;
   font-size: 21px;
-  color: var(--navy);
+  color: var(--white);
   flex: 1;
 }
 .case-chevron {
@@ -306,11 +306,15 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s var(--ease);
+  background: var(--white);
+  margin-top: 0;
+  transition: max-height 0.5s var(--ease), margin-top 0.5s var(--ease);
 }
 .case-body ul { padding: 0px 27px 24px 60px; }
+.case-body ul { padding: 30px 27px 24px 60px; }
 .case-body li {
   font-size: 19px;
-  color: var(--text-muted-light);
+  color: var(--navy);
   line-height: 1.6;
   margin-bottom: 8px;
   padding-left: 16px;
@@ -319,6 +323,11 @@ body {
 }
 .case-study.open .case-body { max-height: 900px; }
 .case-body-inner { padding: 0 30px 30px; }
+.case-study.open .case-body { 
+  max-height: 900px; 
+  margin-top: 12px;
+}
+.case-body-inner { padding: 30px 30px 30px; }
 .case-label {
   font-size: 18px;
   font-weight: 700;
@@ -620,6 +629,34 @@ body {
 .skills-grid[data-lang].active { display: grid; }
 .lang-grid[data-lang].active { display: grid; }
 .contact-row[data-lang].active { display: flex; }
+
+/* Nav Menu */
+.nav-menu {
+  background: var(--navy-mid);
+  padding: 15px 20px;
+  display: none;
+  justify-content: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-dark);
+  flex-wrap: wrap;
+}
+.nav-menu[data-lang].active { display: flex; }
+.nav-link {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s var(--ease);
+}
+.nav-link:hover {
+  color: var(--white);
+}
+@media (max-width: 640px) {
+  .nav-menu { gap: 12px; padding: 12px; }
+  .nav-link { font-size: 11px; }
+}
 </style>
 </head>
 <body>
@@ -665,6 +702,34 @@ body {
     </div>
   </div>
 
+  <nav class="nav-menu anim anim-d1" data-lang="en">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#expertise" class="nav-link">Expertise</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#languages" class="nav-link">Languages</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <nav class="nav-menu anim anim-d1" data-lang="es">
+    <a href="#about" class="nav-link">Sobre mí</a>
+    <a href="#projects" class="nav-link">Proyectos</a>
+    <a href="#expertise" class="nav-link">Especialidades</a>
+    <a href="#skills" class="nav-link">Habilidades</a>
+    <a href="#languages" class="nav-link">Idiomas</a>
+    <a href="#education" class="nav-link">Formación</a>
+    <a href="#contact" class="nav-link">Contacto</a>
+  </nav>
+  <nav class="nav-menu anim anim-d1" data-lang="fr">
+    <a href="#about" class="nav-link">À propos</a>
+    <a href="#projects" class="nav-link">Projets</a>
+    <a href="#expertise" class="nav-link">Expertises</a>
+    <a href="#skills" class="nav-link">Compétences</a>
+    <a href="#languages" class="nav-link">Langues</a>
+    <a href="#education" class="nav-link">Formation</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
   <div class="metrics-bar anim anim-d1" data-lang="en">
     <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Social Media Growth by Automated Pipelines
 
@@ -684,7 +749,7 @@ body {
     <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultations Conclues par Mois via Pipeline d'Admission</div></div>
     <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Heures Facturables &Eacute;conomis&eacute;es</div></div>
   </div>
-  <div class="content">
+  <div id="about" class="content">
 
     <div class="section anim anim-d2" data-lang="en">
     <div class="section-label">Profile</div>
@@ -758,7 +823,7 @@ body {
     
   </div>
 
-    <hr class="divider">
+    <hr class="divider" id="projects">
 
     <div class="section" data-lang="en"><div class="section-label">Portfolio</div><div class="section-title">My Projects</div></div>
     <div class="section" data-lang="es"><div class="section-label">Portfolio</div><div class="section-title">Mis Proyectos</div></div>
@@ -893,7 +958,7 @@ body {
       </div>
     </div>
 
-    <hr class="divider">
+    <hr class="divider" id="expertise">
 
     <div class="section" data-lang="en"><div class="section-label">Expertise</div><div class="section-title">What I Do</div></div>
     <div class="section" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
@@ -915,7 +980,7 @@ body {
       <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relation Client</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
     </div>
 
-    <hr class="divider">
+    <hr class="divider" id="skills">
 
     <div class="section" data-lang="en"><div class="section-label">Capabilities</div><div class="section-title">Skills &amp; Tools</div></div>
     <div class="section" data-lang="es"><div class="section-label">Capacidades</div><div class="section-title">Habilidades y Herramientas</div></div>
@@ -940,7 +1005,7 @@ body {
       <div class="skill-group"><h4>Web et Contenu</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gestion des r&eacute;seaux sociaux &middot; R&eacute;daction &middot; Design de marque</p></div>
     </div>
 
-    <hr class="divider">
+    <hr class="divider" id="languages">
 
     <div class="section" data-lang="en"><div class="section-label">Multilingual</div><div class="section-title">Languages</div></div>
     <div class="section" data-lang="es"><div class="section-label">Multiling&uuml;e</div><div class="section-title">Idiomas</div></div>
@@ -965,7 +1030,7 @@ body {
       <div class="lang-item"><span class="lang-name">Fran&ccedil;ais</span><span class="lang-level">C1</span></div>
     </div>
 
-    <hr class="divider">
+    <hr class="divider" id="education">
 
     <div class="section" data-lang="en"><div class="section-label">Education</div><div class="section-title">Academic Background</div></div>
     <div class="section" data-lang="es"><div class="section-label">Formaci&oacute;n</div><div class="section-title">Formaci&oacute;n Acad&eacute;mica</div></div>
@@ -979,7 +1044,7 @@ body {
     <div data-lang="es"><div class="edu-block"><div class="edu-degree">Grado en Asuntos Consulares y Diplomáticos</div><div class="edu-school">De La Salle - Universidad de San Benildo &middot; Manila, Filipinas</div></div></div>
     <div data-lang="fr"><div class="edu-block"><div class="edu-degree">Licence en Affaires Consulaires et Diplomatiques</div><div class="edu-school">De La Salle - Collège de Saint Benilde &middot; Manille, Philippines</div></div></div>
 
-    <hr class="divider">
+    <hr class="divider" id="contact">
 
     <div class="section" data-lang="en"><div class="section-label">Connect</div><div class="section-title">Get in Touch</div></div>
     <div class="section" data-lang="es"><div class="section-label">Conectar</div><div class="section-title">Contacto</div></div>
@@ -988,15 +1053,17 @@ body {
     <div class="contact-row" data-lang="en">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Email"> Email</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
-      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> Phone</a>
+      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Phone</a>
     </div>
     <div class="contact-row" data-lang="es">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Correo"> Correo</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telefono</a>
     </div>
     <div class="contact-row" data-lang="fr">
       <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Courriel"> Courriel</a>
       <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telephone</a>
     </div>
 
   </div>
@@ -1007,8 +1074,13 @@ body {
 
 <script>
 function switchLang(lang) {
-  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
-  event.target.classList.add('active');
+  const btns = document.querySelectorAll('.lang-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  
+  // Find and activate the correct language button based on the language code
+  const activeBtn = Array.from(btns).find(btn => btn.getAttribute('onclick').includes(`'${lang}'`));
+  if (activeBtn) activeBtn.classList.add('active');
+
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-lang]').forEach(function(el) {
     if (el.dataset.lang === lang) {
@@ -1028,9 +1100,13 @@ function toggleCase(header) {
 }
 
 function scrollToProject(index) {
-  const container = document.querySelector('.projects-container');
-  const cards = document.querySelectorAll('.project-card');
-  const dots = document.querySelectorAll('.carousel-dot');
+  // Target the carousel that is currently visible
+  const activeCarousel = document.querySelector('.projects-carousel.active');
+  if (!activeCarousel) return;
+
+  const container = activeCarousel.querySelector('.projects-container');
+  const cards = activeCarousel.querySelectorAll('.project-card');
+  const dots = activeCarousel.querySelectorAll('.carousel-dot');
   
   if (cards[index]) {
     container.scrollTo({
@@ -1055,30 +1131,31 @@ document.addEventListener('DOMContentLoaded', function() {
     el.classList.add('active');
   });
   
-  // Set initial active card
-  const initialCard = document.querySelector('.project-card');
-  if (initialCard) {
-    initialCard.classList.add('active');
-  }
+  // Initialize the first card as active for every language carousel
+  document.querySelectorAll('.projects-carousel').forEach(carousel => {
+    const firstCard = carousel.querySelector('.project-card');
+    if (firstCard) firstCard.classList.add('active');
+  });
   
-  // Add scroll listener for carousel dots and cards
-  const container = document.querySelector('.projects-container');
-  if (container) {
+  // Add scroll listeners to all language containers
+  document.querySelectorAll('.projects-container').forEach(container => {
     container.addEventListener('scroll', function() {
-      const cards = document.querySelectorAll('.project-card');
-      const dots = document.querySelectorAll('.carousel-dot');
+      const carousel = container.closest('.projects-carousel');
+      const cards = carousel.querySelectorAll('.project-card');
+      const dots = carousel.querySelectorAll('.carousel-dot');
       const scrollLeft = container.scrollLeft;
       
       cards.forEach((card, index) => {
         const cardLeft = card.offsetLeft;
         const cardRight = cardLeft + card.offsetWidth;
+        // Check if this card is centered in the current viewport
         const isActive = scrollLeft >= cardLeft - 50 && scrollLeft < cardRight - 50;
         
         card.classList.toggle('active', isActive);
-        dots[index].classList.toggle('active', isActive);
+        if (dots[index]) dots[index].classList.toggle('active', isActive);
       });
     });
-  }
+  });
 });
 </script>
 </body>
