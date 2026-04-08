@@ -543,15 +543,41 @@ body {
 
 /* --- MOBILE RESPONSIVENESS UPDATES --- */
 @media (max-width: 768px) {
-  .page { max-width: 95%; }
-  
-  /* Header & Navigation */
-  .top-bar { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
-  .top-bar-left { flex-direction: column; gap: 10px; }
-  .top-bar-name { font-size: 14px; letter-spacing: 1px; }
-  .lang-btn { padding: 5px 12px; font-size: 20px; }
-  .nav-menu { padding: 10px; gap: 10px; }
-  .nav-link { font-size: 10px; }
+  .top-bar {
+    padding: 12px 15px;
+    flex-direction: row; /* Keep elements side-by-side */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-bar-left {
+    flex-direction: row; /* Keep logo and name together */
+    align-items: center;
+    gap: 8px;
+    max-width: 70%; /* Prevents text from pushing buttons off-screen */
+  }
+
+  .logo-img {
+    height: 30px; /* Scale down logo for mobile */
+  }
+
+  .top-bar-name {
+    font-size: 11px; /* Significantly smaller to prevent multi-line stacking */
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
+
+  .lang-bar {
+    gap: 4px;
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 16px; /* Smaller flag icons */
+    border-radius: 4px;
+  }
+}
 
   /* Hero Section */
   .hero-block { padding: 40px 20px; }
