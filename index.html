@@ -110,9 +110,9 @@ body {
 }
 .hero-inner { display: flex; gap: 48px; align-items: flex-start; }
 .photo {
-  width: 270px; /* Change this to your desired width */
-  height: 270px; /* Change this to your desired height */
-  min-width: 270px; /* Match this to your width */
+  width: 270px;
+  height: 270px;
+  min-width: 270px;
   border-radius: 9px;
   background: var(--navy-light);
   border: 3px solid var(--white);
@@ -218,7 +218,7 @@ body {
 }
 
 .section ul li {
-  margin-bottom: 10px; /* Adjust the spacing between list items as needed */
+  margin-bottom: 10px;
 }
 
 /* Divider */
@@ -288,7 +288,7 @@ body {
   background: var(--navy);
 }
 
-/* Case Studies */
+/* Case Studies (Expertise) */
 .case-study {
   background: var(--navy-light);
   border: 1px solid var(--border-light);
@@ -321,12 +321,10 @@ body {
 .case-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s var(--ease);
+  transition: max-height 0.5s var(--ease), margin-top 0.5s var(--ease);
   background: var(--white);
   margin-top: 0;
-  transition: max-height 0.5s var(--ease), margin-top 0.5s var(--ease);
 }
-.case-body ul { padding: 0px 27px 24px 60px; }
 .case-body ul { padding: 30px 27px 24px 60px; }
 .case-body li {
   font-size: 19px;
@@ -337,28 +335,9 @@ body {
   position: relative;
   list-style: disc;
 }
-.case-study.open .case-body { max-height: 900px; }
-.case-body-inner { padding: 0 30px 30px; }
 .case-study.open .case-body { 
   max-height: 900px; 
   margin-top: 12px;
-}
-.case-body-inner { padding: 30px 30px 30px; }
-.case-label {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--navy-light);
-  margin-bottom: 4px;
-  margin-top: 0px;
-}
-.case-label:first-child { margin-top: 0; }
-.case-body p {
-  font-size: 18px;
-  color: var(--text-muted-light);
-  line-height: 1.65;
-  margin-bottom: 2px;
 }
 
 /* Skills */
@@ -448,9 +427,8 @@ body {
 .projects-carousel {
   position: relative;
   overflow: hidden;
-  margin: 10px 0;
-  max-width: 980x;
   margin: 10px auto;
+  max-width: 1050px;
 }
 
 .projects-container {
@@ -458,18 +436,11 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   gap: 0;
   padding: 0;
   margin: 0;
   cursor: grab;
   user-select: none;
-}
-
-.projects-container.grabbing {
-  cursor: grabbing;
-  scroll-snap-type: none;
-  scroll-behavior: auto;
 }
 
 .projects-container::-webkit-scrollbar {
@@ -488,106 +459,41 @@ body {
   transition: all 0.4s var(--ease);
 }
 
-.project-card.active {
-  border-color: var(--navy);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-}
-
 .project-card h3 {
-  font-family: var(--font);
   font-size: 20px;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 12px;
-  line-height: 1.3;
 }
 
 .project-card p {
   font-size: 19px;
   color: var(--text-muted-light);
-  line-height: 1.5;
   margin-bottom: 16px;
 }
 
-.project-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.project-card li {
-  font-size: 19px;
-  color: var(--text-muted-light);
-  line-height: 1.5;
-  margin-bottom: 8px;
-  padding-left: 16px;
-  position: relative;
-}
-
-.project-card li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 2px;
-  background: var(--navy);
-}
-
-.project-card li strong {
-  color: var(--navy);
-  font-weight: 600;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 2100px) {
-  .projects-carousel {
-    max-width: 100%;
-    margin: 20px 0;
-  }
-  
-  .project-card {
-    padding: 20px 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-card {
-    padding: 16px 20px;
-  }
-  
-  .project-card h3 {
-    font-size: 27.2px;
-  }
-}
-
-/* Carousel Navigation */
+/* Carousel Nav */
 .carousel-nav {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-top: 30px;
 }
-
 .carousel-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--border-light);
   cursor: pointer;
-  transition: background 0.2s var(--ease);
 }
-
-.carousel-dot.active {
-  background: var(--navy);
-}
+.carousel-dot.active { background: var(--navy); }
 
 /* Contact */
 .contact-row { 
   display: flex; 
   gap: 18px; 
   flex-wrap: wrap;
-  max-width: 2100px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 .contact-link {
@@ -596,20 +502,13 @@ body {
   gap: 12px;
   padding: 18px 36px;
   background: var(--navy);
-  border: none;
   border-radius: 6px;
   text-decoration: none;
   color: var(--cream);
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  transition: all 0.25s var(--ease);
 }
-.contact-link img {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-}
+.contact-link img { width: 36px; height: 36px; }
 
 /* Footer */
 .footer-bar {
@@ -618,43 +517,10 @@ body {
   text-align: center;
   font-size: 12.5px;
   color: var(--text-muted-dark);
-  letter-spacing: 0.5px;
   border-top: 2px solid var(--white);
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .hero-block { padding: 60px 36px 54px; }
-  .hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-  .tagline { max-width: 100%; }
-  .hero-meta { text-align: center; }
-  .hero-meta span { margin-bottom: 6px; }
-  .metrics-bar { grid-template-columns: 1fr; }
-  .metric-item { border-right: none; border-bottom: 1px solid var(--border-dark); }
-  .metric-item:last-child { border-bottom: none; }
-  .content { padding: 48px 36px; }
-  .pillars { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .lang-grid { grid-template-columns: 1fr 1fr; }
-  .hero-text h1 { font-size: 47.6px; }
-  
-  /* Remove max-width constraints on mobile for better fit */
-  .pillars, .lang-grid, .contact-row, .edu-block, .case-study, .projects-carousel, .skills-grid {
-    max-width: none;
-    margin: 10px 0;
-  }
-}
-
-/* Language visibility */
-[data-lang] { display: none; }
-[data-lang].active { display: block; }
-.metrics-bar[data-lang].active { display: grid; }
-.pillars[data-lang].active { display: grid; }
-.skills-grid[data-lang].active { display: grid; }
-.lang-grid[data-lang].active { display: grid; }
-.contact-row[data-lang].active { display: flex; }
-
-/* Nav Menu */
+/* Navigation Menu */
 .nav-menu {
   background: var(--navy-mid);
   padding: 15px 20px;
@@ -662,39 +528,73 @@ body {
   justify-content: center;
   gap: 24px;
   border-bottom: 1px solid var(--border-dark);
-  flex-wrap: wrap;
 }
-.nav-menu[data-lang].active { display: flex; }
-.nav-link {
-  color: var(--text-on-dark);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.2s var(--ease);
-}
-.nav-link:hover {
-  color: var(--white);
-}
-@media (max-width: 640px) {
-  .nav-menu { gap: 12px; padding: 12px; }
-  .nav-link { font-size: 11px; }
-}
+.nav-menu.active { display: flex; }
+.nav-link { color: var(--text-on-dark); text-decoration: none; font-weight: 700; text-transform: uppercase; }
 
-/* Section Fade-In Animation */
-@keyframes sectionFadeIn {
-  0% { opacity: 0; transform: translateY(5px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.fade-in-active {
-  animation: sectionFadeIn 1.2s var(--ease);
+/* Language Visibility */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+.metrics-bar[data-lang].active { display: grid; }
+.skills-grid[data-lang].active { display: grid; }
+.lang-grid[data-lang].active { display: grid; }
+.contact-row[data-lang].active { display: flex; }
+.nav-menu[data-lang].active { display: flex; }
+
+/* --- MOBILE RESPONSIVENESS UPDATES --- */
+@media (max-width: 768px) {
+  .page { max-width: 95%; }
+  
+  /* Header & Navigation */
+  .top-bar { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
+  .top-bar-left { flex-direction: column; gap: 10px; }
+  .top-bar-name { font-size: 14px; letter-spacing: 1px; }
+  .lang-btn { padding: 5px 12px; font-size: 20px; }
+  .nav-menu { padding: 10px; gap: 10px; }
+  .nav-link { font-size: 10px; }
+
+  /* Hero Section */
+  .hero-block { padding: 40px 20px; }
+  .hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  .photo { width: 180px; height: 180px; min-width: 180px; }
+  .photo img { width: 180px; height: 180px; }
+  .hero-text h1 { font-size: 28px; }
+  .tagline { font-size: 14px; }
+  .hero-meta { font-size: 14px; }
+
+  /* Metrics */
+  .metrics-bar { grid-template-columns: 1fr; }
+  .metric-item { padding: 25px 20px; border-right: none; border-bottom: 1px solid var(--border-dark); }
+  .metric-num { font-size: 45px; }
+
+  /* Content Spacing */
+  .content { padding: 40px 20px; }
+  .section-title { font-size: 22px; }
+  .section p, .section ul { font-size: 16px; }
+
+  /* Grid Layouts */
+  .pillars { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .lang-grid { grid-template-columns: 1fr 1fr; }
+  
+  /* Project Cards */
+  .project-card { padding: 30px 20px; }
+  .project-card h3 { font-size: 18px; }
+  .project-card p, .project-card li { font-size: 16px; }
+
+  /* Expertise / Case Studies */
+  .case-title { font-size: 17px; }
+  .case-body ul { padding: 20px 20px 20px 40px; }
+  .case-body li { font-size: 16px; }
+
+  /* Contact Row */
+  .contact-row { justify-content: center; }
+  .contact-link { width: 100%; justify-content: center; padding: 15px; }
 }
 </style>
 </head>
 <body>
 <div class="page">
-
   <div class="top-bar">
     <div class="top-bar-left">
       <img src="logo.jpg" alt="Logo" class="logo-img">
@@ -714,569 +614,110 @@ body {
       <div class="photo"><img src="profile-pic-smaller.png" alt="Augusto Manuel Legaspi Delfin"></div>
       <div class="hero-text">
         <h1>Augusto Manuel Legaspi Delfin</h1>
-        <div class="tagline" data-lang="en">I streamline workflows, boost client engagement, and grow brand presence by automating routine tasks in business processes, social media, and data analytics. This clears the way for high-level professionals to focus on work that generates revenue.</div>
-        <div class="tagline" data-lang="es">Optimizo los flujos de trabajo, impulso el compromiso del cliente y aumento la presencia de marca mediante la automatización de tareas rutinarias en los procesos de negocio, redes sociales y análisis de datos. Esto despeja el camino para que los profesionales de alto nivel se enfoquen en el trabajo que genera ingresos.</div>
-        <div class="tagline" data-lang="fr">J'optimise les flux de travail, renforce l'engagement client et développe la présence de la marque en automatisant les tâches récurrentes dans les processus métier, les réseaux sociaux et l'analyse de données. Cela permet aux professionnels de haut niveau de se consacrer pleinement aux activités génératrices de revenus.</div>
+        <div class="tagline" data-lang="en">I streamline workflows, boost client engagement, and grow brand presence by automating routine tasks. This clears the way for high-level professionals to focus on revenue-generating work.</div>
+        <div class="tagline" data-lang="es">Optimizo los flujos de trabajo, impulso el compromiso del cliente y aumento la presencia de marca mediante la automatización de tareas rutinarias.</div>
+        <div class="tagline" data-lang="fr">J'optimise les flux de travail, renforce l'engagement client et développe la présence de la marque en automatisant les tâches récurrentes.</div>
         <div class="hero-meta">
           <div data-lang="en">
-            <span>&#x1F4CD; Bilbao, Spain</span>
-            <span>&#x1F393; Master in Business Diplomacy, Bachelor's in Consular and Diplomatic Affairs</span>
-            <span>&#x1F310; EN &middot; ES &middot; FR &middot; FIL</span>
+            <span>📍 Bilbao, Spain</span>
+            <span>🎓 Master in Business Diplomacy</span>
+            <span>🌐 EN · ES · FR · FIL</span>
           </div>
           <div data-lang="es">
-            <span>&#x1F4CD; Bilbao, España</span>
-            <span>&#x1F393; Máster en Diplomacia Empresarial, Grado en Asuntos Consulares y Diplomáticos</span>
-            <span>&#x1F310; EN &middot; ES &middot; FR &middot; FIL</span>
+            <span>📍 Bilbao, España</span>
+            <span>🎓 Máster en Diplomacia Empresarial</span>
+            <span>🌐 EN · ES · FR · FIL</span>
           </div>
           <div data-lang="fr">
-            <span>&#x1F4CD; Bilbao, Espagne</span>
-            <span>&#x1F393; Master en Diplomatie des Affaires, Licence en Affaires Consulaires et Diplomatiques</span>
-            <span>&#x1F310; EN &middot; ES &middot; FR &middot; FIL</span>
+            <span>📍 Bilbao, Espagne</span>
+            <span>🎓 Master en Diplomatie des Affaires</span>
+            <span>🌐 EN · ES · FR · FIL</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <nav class="nav-menu anim anim-d1" data-lang="en">
+  <nav class="nav-menu active" data-lang="en">
     <a href="#about" class="nav-link">About</a>
     <a href="#projects" class="nav-link">Projects</a>
     <a href="#expertise" class="nav-link">Expertise</a>
-    <a href="#skills" class="nav-link">Skills</a>
-    <a href="#languages" class="nav-link">Languages</a>
-    <a href="#education" class="nav-link">Education</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
-  <nav class="nav-menu anim anim-d1" data-lang="es">
+  <nav class="nav-menu" data-lang="es">
     <a href="#about" class="nav-link">Sobre mí</a>
     <a href="#projects" class="nav-link">Proyectos</a>
     <a href="#expertise" class="nav-link">Especialidades</a>
-    <a href="#skills" class="nav-link">Habilidades</a>
-    <a href="#languages" class="nav-link">Idiomas</a>
-    <a href="#education" class="nav-link">Formación</a>
     <a href="#contact" class="nav-link">Contacto</a>
   </nav>
-  <nav class="nav-menu anim anim-d1" data-lang="fr">
+  <nav class="nav-menu" data-lang="fr">
     <a href="#about" class="nav-link">À propos</a>
     <a href="#projects" class="nav-link">Projets</a>
     <a href="#expertise" class="nav-link">Expertises</a>
-    <a href="#skills" class="nav-link">Compétences</a>
-    <a href="#languages" class="nav-link">Langues</a>
-    <a href="#education" class="nav-link">Formation</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
-  <div class="metrics-bar anim anim-d1 reveal" data-lang="en">
-    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Social Media Growth by Automated Pipelines
-
-</div></div>
-    <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultations Closed Monthly via Intake Pipeline</div></div>
-    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Billable Hours Saved / Year</div></div>
-  </div>
-  <div class="metrics-bar reveal" data-lang="es">
-    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Crecimiento en Redes por Pipelines Automatizados
-</div></div>
-    <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultas Cerradas al Mes vía Pipeline de Admisión
-</div></div>
-    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Horas Facturables Ahorradas</div></div>
-  </div>
-  <div class="metrics-bar reveal" data-lang="fr">
-    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Croissance Réseaux par Pipelines Automatisés</div></div>
-    <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Consultations Conclues par Mois via Pipeline d'Admission</div></div>
-    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Heures Facturables &Eacute;conomis&eacute;es</div></div>
+  <div class="metrics-bar active" data-lang="en">
+    <div class="metric-item"><div class="metric-num">154%</div><div class="metric-label">Social Growth</div></div>
+    <div class="metric-item"><div class="metric-num">40+</div><div class="metric-label">Closures Monthly</div></div>
+    <div class="metric-item"><div class="metric-num">90+</div><div class="metric-label">Hours Saved</div></div>
   </div>
   <div id="about" class="content">
-
-    <div class="section anim anim-d2 reveal" data-lang="en">
-    <div class="section-label">Profile</div>
-    <div class="section-title">About</div>
-    <p>
-      I'm a legal operations and client experience consultant based in Bilbao, Spain. I work with businesses to design and automate the critical processes and systems that power their most important work — so high-level professionals can focus on strategic, client-facing priorities.
-    </p>
-    <p>My consulting approach spans the full engagement lifecycle:</p>
-    <ul class="engagement-lifecycle">
-      <li>Designing frictionless client intake and onboarding workflows</li>
-      <li>Automating data pipelines for seamless knowledge management</li>
-      <li>Developing self-service portals and resources for always-on client support</li>
-      <li>Measuring and optimizing the client journey for maximum impact</li>
-    </ul>
-    <p>
-      I bring a versatile automation toolkit to every engagement, with deep expertise spanning API integrations (Zapier), custom scripts (Google Apps Script, Python), data wrangling (SQL, Excel), and analytics (Google Data Studio). But I'm equally adept with no-code tools like Airtable, Notion, and Squarespace — and I'm a quick study when it comes to picking up new platforms.
-    </p>
-    <p>
-      I hold a Master in Business Diplomacy from the University of Deusto and bring the cultural fluency of a native English and Filipino speaker with professional proficiency in Spanish and French.
-    </p>
-    <p>
-      Above all, I bring a keen eye for identifying opportunities and inefficiencies. I excel at recognizing manual, repetitive tasks that create bottlenecks and transforming them into streamlined, automated workflows that drive meaningful business improvement.
-    </p>
+    <div class="section active" data-lang="en">
+      <div class="section-label">Profile</div>
+      <div class="section-title">About</div>
+      <p>I'm a legal operations and client experience consultant based in Bilbao, Spain. I design and automate critical systems so professionals can focus on strategic priorities.</p>
     </div>
-      <div class="section anim anim-d2 reveal" data-lang="es">
-    <div class="section-label">Perfil</div>
-    <div class="section-title">Sobre mí</div>
-    <p>
-      Soy consultor en operaciones legales y experiencia del cliente, con sede en Bilbao, España. Trabajo con empresas para diseñar y automatizar los procesos y sistemas críticos que impulsan su actividad principal, permitiendo que los profesionales se centren en prioridades estratégicas y en la relación con el cliente.
-    </p>
-    <p>Mi enfoque de consultoría abarca todo el ciclo de trabajo:</p>
-    <ul class="engagement-lifecycle">
-      <li>Diseño de procesos de captación y onboarding de clientes sin fricciones</li>
-      <li>Automatización de flujos de datos para una gestión del conocimiento eficiente</li>
-      <li>Desarrollo de portales y recursos de autoservicio para una atención continua</li>
-      <li>Medición y optimización de la experiencia del cliente para maximizar el impacto</li>
-    </ul>
-    <p>
-      Aporto un conjunto versátil de herramientas de automatización en cada proyecto, con experiencia en integraciones de APIs (Zapier), scripts personalizados (Google Apps Script, Python), tratamiento de datos (SQL, Excel) y analítica (Google Data Studio). También trabajo con herramientas no-code como Airtable, Notion y Squarespace, y aprendo rápidamente nuevas plataformas.
-    </p>
-    <p>
-      Tengo un Máster en Business Diplomacy por la Universidad de Deusto y aporto fluidez cultural como hablante nativo de inglés y filipino, con nivel profesional en español y francés.
-    </p>
-    <p>
-      Sobre todo, aporto una gran capacidad para identificar oportunidades e ineficiencias. Destaco en detectar tareas manuales y repetitivas que generan cuellos de botella y en transformarlas en procesos automatizados y eficientes que aportan valor real al negocio.
-    </p>
-    </div>
-    <div class="section anim anim-d2 reveal" data-lang="fr">
-    <div class="section-label">Profil</div>
-    <div class="section-title">À propos</div>
-    <p>
-      Je suis consultant en opérations juridiques et expérience client, basé à Bilbao, en Espagne. J’accompagne les entreprises dans la conception et l’automatisation des processus et systèmes essentiels qui soutiennent leurs activités, afin de permettre aux professionnels de se concentrer sur des priorités stratégiques et la relation client.
-    </p>
-    <p>Mon approche couvre l’ensemble du cycle d’engagement :</p>
-    <ul class="engagement-lifecycle">
-      <li>Conception de parcours d’acquisition et d’onboarding client sans friction</li>
-      <li>Automatisation des flux de données pour une gestion efficace des connaissances</li>
-      <li>Développement de portails et de ressources en libre-service pour un support continu</li>
-      <li>Mesure et optimisation du parcours client pour maximiser l’impact</li>
-    </ul>
-    <p>
-      J’apporte à chaque mission un ensemble d’outils d’automatisation polyvalents, avec une expertise en intégrations d’API (Zapier), scripts personnalisés (Google Apps Script, Python), traitement de données (SQL, Excel) et analytique (Google Data Studio). Je maîtrise également des outils no-code comme Airtable, Notion et Squarespace, et j’apprends rapidement de nouvelles plateformes.
-    </p>
-    <p>
-      Je suis titulaire d’un Master en Business Diplomacy de l’Université de Deusto et bénéficie d’une aisance interculturelle en tant que locuteur natif anglais et filipino, avec un niveau professionnel en espagnol et en français.
-    </p>
-    <p>
-      Avant tout, je possède une forte capacité à identifier les opportunités et les inefficacités. Je sais repérer les tâches manuelles et répétitives générant des goulets d’étranglement et les transformer en processus automatisés, efficaces et créateurs de valeur.
-    </p>
-  </div>
     
-  </div>
-
     <hr class="divider" id="projects">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Portfolio</div><div class="section-title">My Projects</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Portfolio</div><div class="section-title">Mis Proyectos</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Portfolio</div><div class="section-title">Mes Projets</div></div>
-
-    <div class="projects-carousel reveal" data-lang="en">
+    <div class="section-title" style="margin-top: 40px;">Projects</div>
+    
+    <div class="projects-carousel active" data-lang="en">
       <div class="projects-container">
         <div class="project-card">
           <h3>Client Onboarding Microsite</h3>
-          <p>Developed a comprehensive onboarding portal using Squarespace, HTML, and CSS to guide clients through the entire onboarding process. The microsite serves as a centralized hub for client information, document requirements, and government resources, streamlining the onboarding experience.</p>
-          <ul>
-            <li><strong>Tools:</strong> Squarespace, HTML, CSS</li>
-            <li><strong>Impact:</strong> Improved client satisfaction and reduced onboarding time</li>
-          </ul>
+          <p>Developed a comprehensive onboarding portal using Squarespace, HTML, and CSS to guide clients through the process.</p>
+          <ul><li><strong>Impact:</strong> Reduced onboarding time significantly.</li></ul>
         </div>
         <div class="project-card">
           <h3>Centralized Inquiry Pipeline</h3>
-          <p>Built an automated system using Zapier to consolidate inquiries from multiple channels (Facebook, email, website) into a centralized Asana board. This streamlined inquiry management and ensured timely response to client requests.</p>
-          <ul>
-            <li><strong>Tools:</strong> Zapier, Asana</li>
-            <li><strong>Impact:</strong> Enhanced inquiry tracking and improved response times</li>
-          </ul>
+          <p>Built an automated system using Zapier to consolidate inquiries from multiple channels into Asana.</p>
         </div>
-        <div class="project-card">
-          <h3>Real-Time Policy Tracking System</h3>
-          <p>Created an automated system aggregating real-time government policy updates across federal and provincial programs. Includes data visualization with Google Data Studio and automated social media announcements.</p>
-          <ul>
-            <li><strong>Tools:</strong> Google Apps Script, Google Data Studio, Zapier</li>
-            <li><strong>Impact:</strong> Shifted advice from intuition-based to data-driven</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Automated Content Publishing</h3>
-          <p>Implemented end-to-end automated content publishing system using Zapier and Apps Script. Achieved 154% social media growth (3,400 → 8,700+ followers) as sole strategist.</p>
-          <ul>
-            <li><strong>Tools:</strong> Zapier, Google Apps Script</li>
-            <li><strong>Impact:</strong> Zero manual intervention required</li>
-          </ul>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <div class="carousel-dot active" onclick="scrollToProject(0)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(1)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(2)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(3)"></div>
-      </div>
-    </div>
-
-    <div class="projects-carousel reveal" data-lang="es">
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>Micrositio de Incorporación de Clientes</h3>
-          <p>Desarrollé un portal integral de incorporación utilizando Squarespace, HTML y CSS para guiar a los clientes a través de todo el proceso de incorporación. El micrositio sirve como centro centralizado para información del cliente, requisitos de documentos y recursos gubernamentales, optimizando la experiencia de incorporación.</p>
-          <ul>
-            <li><strong>Herramientas:</strong> Squarespace, HTML, CSS</li>
-            <li><strong>Impacto:</strong> Mejoró la satisfacción del cliente y redujo el tiempo de incorporación</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Pipeline Centralizado de Consultas</h3>
-          <p>Construí un sistema automatizado utilizando Zapier para consolidar consultas de múltiples canales (Facebook, correo electrónico, sitio web) en un tablero centralizado de Asana. Esto optimizó la gestión de consultas y aseguró respuestas oportunas a las solicitudes de los clientes.</p>
-          <ul>
-            <li><strong>Herramientas:</strong> Zapier, Asana</li>
-            <li><strong>Impacto:</strong> Mejoró el seguimiento de consultas y los tiempos de respuesta</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Sistema de Seguimiento de Políticas en Tiempo Real</h3>
-          <p>Creé un sistema automatizado que agrega actualizaciones de políticas gubernamentales en tiempo real a través de programas federales y provinciales. Incluye visualización de datos con Google Data Studio y anuncios automatizados en redes sociales.</p>
-          <ul>
-            <li><strong>Herramientas:</strong> Google Apps Script, Google Data Studio, Zapier</li>
-            <li><strong>Impacto:</strong> Cambió el asesoramiento de basado en intuición a basado en datos</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Publicación Automatizada de Contenido</h3>
-          <p>Implementé un sistema de publicación de contenido automatizado de extremo a extremo utilizando Zapier y Apps Script. Logré un crecimiento del 154% en redes sociales (3.400 → 8.700+ seguidores) como único estratega.</p>
-          <ul>
-            <li><strong>Herramientas:</strong> Zapier, Google Apps Script</li>
-            <li><strong>Impacto:</strong> Sin intervención manual requerida</li>
-          </ul>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <div class="carousel-dot active" onclick="scrollToProject(0)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(1)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(2)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(3)"></div>
-      </div>
-    </div>
-
-    <div class="projects-carousel reveal" data-lang="fr">
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>Microsite d'Intégration Client</h3>
-          <p>Développé un portail d'intégration complet utilisant Squarespace, HTML et CSS pour guider les clients à travers l'ensemble du processus d'intégration. Le microsite sert de hub centralisé pour les informations clients, les exigences documentaires et les ressources gouvernementales, optimisant l'expérience d'intégration.</p>
-          <ul>
-            <li><strong>Outils:</strong> Squarespace, HTML, CSS</li>
-            <li><strong>Impact:</strong> Amélioré la satisfaction client et réduit le temps d'intégration</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Pipeline Centralisé d'Inquiries</h3>
-          <p>Construit un système automatisé utilisant Zapier pour consolider les demandes de plusieurs canaux (Facebook, email, site web) dans un tableau de bord centralisé Asana. Cela a optimisé la gestion des demandes et assuré des réponses opportunes aux demandes clients.</p>
-          <ul>
-            <li><strong>Outils:</strong> Zapier, Asana</li>
-            <li><strong>Impact:</strong> Amélioré le suivi des demandes et les délais de réponse</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Système de Suivi des Politiques en Temps Réel</h3>
-          <p>Créé un système automatisé agrégeant les mises à jour des politiques gouvernementales en temps réel à travers les programmes fédéraux et provinciaux. Inclut la visualisation de données avec Google Data Studio et les annonces automatisées sur les réseaux sociaux.</p>
-          <ul>
-            <li><strong>Outils:</strong> Google Apps Script, Google Data Studio, Zapier</li>
-            <li><strong>Impact:</strong> Changé les conseils d'intuition-based à data-driven</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Publication Automatisée de Contenu</h3>
-          <p>Implémenté un système de publication de contenu automatisé de bout en bout utilisant Zapier et Apps Script. Atteint une croissance de 154% sur les réseaux sociaux (3 400 → 8 700+ abonnés) en tant que seul stratège.</p>
-          <ul>
-            <li><strong>Outils:</strong> Zapier, Google Apps Script</li>
-            <li><strong>Impact:</strong> Aucune intervention manuelle requise</li>
-          </ul>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <div class="carousel-dot active" onclick="scrollToProject(0)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(1)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(2)"></div>
-        <div class="carousel-dot" onclick="scrollToProject(3)"></div>
       </div>
     </div>
 
     <hr class="divider" id="expertise">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Expertise</div><div class="section-title">What I Do</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Especialidades</div><div class="section-title">Qu&eacute; hago</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Expertises</div><div class="section-title">Ce que je fais</div></div>
-
-    <div data-lang="en" class="reveal">
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Legal Operations &amp; Automation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Automated system aggregating real-time government policy updates across federal and provincial programs</li><li>Data pipeline with Google Data Studio, Apps Script &amp; Zapier visualizing applicant scores by eligibility bands</li><li>Centralized client onboarding microsite saving 50+ hours of billable time per year</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Social Media &amp; Communications</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>154% social media growth in one year (3,400 &rarr; 8,700+ followers) as sole strategist</li><li>End-to-end automated content publishing via Zapier &amp; Apps Script &mdash; zero manual intervention</li><li>Sole point of contact for all inbound communications across web, social &amp; email</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Client Engagement</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>300+ consultations managed annually: intake, identity verification, eligibility assessments &amp; scoring projections</li><li>Structured intake system saving 40+ administrative hours per year</li><li>Bilingual support for French-speaking clients navigating documentation</li></ul></div></div>
+    <div class="section-title">Expertise</div>
+    <div class="case-study active" data-lang="en">
+      <div class="case-header" onclick="toggleCase(this)"><span class="case-title">Automation & Ops</span><span class="case-chevron">▾</span></div>
+      <div class="case-body"><ul><li>Automated policy tracking.</li><li>Data visualization pipelines.</li></ul></div>
     </div>
-    <div data-lang="es" class="reveal">
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Operaciones Legales y Automatizaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Sistema automatizado que agrega actualizaciones de pol&iacute;ticas gubernamentales en tiempo real</li><li>Flujo de datos con Google Data Studio, Apps Script y Zapier para visualizar puntajes por bandas de elegibilidad</li><li>Micrositio de incorporaci&oacute;n de clientes ahorrando m&aacute;s de 50 horas facturables al a&ntilde;o</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Redes Sociales y Comunicaci&oacute;n</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Crecimiento del 154% en un a&ntilde;o (3.400 &rarr; 8.700+ seguidores) como &uacute;nico estratega</li><li>Publicaci&oacute;n automatizada con Zapier y Apps Script &mdash; sin intervenci&oacute;n manual</li><li>&Uacute;nico punto de contacto para comunicaciones entrantes en web, redes y correo</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relaci&oacute;n con el Cliente</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>M&aacute;s de 300 consultas gestionadas al a&ntilde;o: admisi&oacute;n, verificaci&oacute;n, evaluaciones y proyecciones</li><li>Sistema de admisi&oacute;n que ahorr&oacute; m&aacute;s de 40 horas administrativas al a&ntilde;o</li><li>Soporte biling&uuml;e para clientes franc&oacute;fonos</li></ul></div></div>
-    </div>
-    <div data-lang="fr" class="reveal">
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Op&eacute;rations Juridiques et Automatisation</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Syst&egrave;me automatis&eacute; agr&eacute;geant les mises &agrave; jour des politiques gouvernementales en temps r&eacute;el</li><li>Flux de donn&eacute;es avec Google Data Studio, Apps Script et Zapier pour visualiser les scores par tranches</li><li>Microsite d'int&eacute;gration clients &eacute;conomisant plus de 50 heures facturables par an</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">R&eacute;seaux Sociaux et Communication</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Croissance de 154% en un an (3 400 &rarr; 8 700+ abonn&eacute;s) en tant que seul strat&egrave;ge</li><li>Publication automatis&eacute;e avec Zapier et Apps Script &mdash; sans intervention manuelle</li><li>Seul point de contact pour toutes les communications entrantes</li></ul></div></div>
-      <div class="case-study"><div class="case-header" onclick="toggleCase(this)"><span class="case-title">Relation Client</span><span class="case-chevron">&#x25BE;</span></div><div class="case-body"><ul><li>Plus de 300 consultations g&eacute;r&eacute;es par an : admission, v&eacute;rification, &eacute;valuations et projections</li><li>Syst&egrave;me d'admission &eacute;conomisant plus de 40 heures administratives par an</li><li>Soutien bilingue pour les clients francophones</li></ul></div></div>
-    </div>
-
-    <hr class="divider" id="skills">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Capabilities</div><div class="section-title">Skills &amp; Tools</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Capacidades</div><div class="section-title">Habilidades y Herramientas</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Capacit&eacute;s</div><div class="section-title">Comp&eacute;tences et Outils</div></div>
-
-    <div class="skills-grid reveal" data-lang="en">
-      <div class="skill-group"><h4>Automation &amp; Data</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
-      <div class="skill-group"><h4>Operations &amp; Process</h4><p>Workflow design &middot; Intake systems &middot; Process mapping &middot; Onboarding portals &middot; Data pipelines &middot; Inquiry tracking</p></div>
-      <div class="skill-group"><h4>Communication &amp; Management</h4><p>Client engagement &middot; Stakeholder management &middot; Content strategy &middot; Cross-functional coordination &middot; Editorial writing &middot; Bilingual content</p></div>
-      <div class="skill-group"><h4>Web &amp; Content</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Social media management &middot; Copywriting &middot; Brand-consistent design</p></div>
-    </div>
-    <div class="skills-grid reveal" data-lang="es">
-      <div class="skill-group"><h4>Automatizaci&oacute;n y Datos</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
-      <div class="skill-group"><h4>Operaciones y Procesos</h4><p>Dise&ntilde;o de flujos &middot; Sistemas de admisi&oacute;n &middot; Mapeo de procesos &middot; Portales de incorporaci&oacute;n &middot; Flujos de datos</p></div>
-      <div class="skill-group"><h4>Comunicaci&oacute;n y Gesti&oacute;n</h4><p>Relaci&oacute;n con el cliente &middot; Gesti&oacute;n de stakeholders &middot; Estrategia de contenido &middot; Coordinaci&oacute;n interfuncional &middot; Redacci&oacute;n editorial</p></div>
-      <div class="skill-group"><h4>Web y Contenido</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gesti&oacute;n de redes sociales &middot; Copywriting &middot; Dise&ntilde;o de marca</p></div>
-    </div>
-    <div class="skills-grid reveal" data-lang="fr">
-      <div class="skill-group"><h4>Automatisation et Donn&eacute;es</h4><p>Zapier &middot; Google Apps Script &middot; Google Data Studio &middot; Google Workspace &middot; SQL &middot; Python</p></div>
-      <div class="skill-group"><h4>Op&eacute;rations et Processus</h4><p>Conception de flux &middot; Syst&egrave;mes d'admission &middot; Cartographie de processus &middot; Portails d'int&eacute;gration &middot; Flux de donn&eacute;es</p></div>
-      <div class="skill-group"><h4>Communication et Gestion</h4><p>Relation client &middot; Gestion des parties prenantes &middot; Strat&eacute;gie de contenu &middot; Coordination interfonctionnelle &middot; R&eacute;daction &eacute;ditoriale</p></div>
-      <div class="skill-group"><h4>Web et Contenu</h4><p>Squarespace &middot; HTML/CSS/JS &middot; Gestion des r&eacute;seaux sociaux &middot; R&eacute;daction &middot; Design de marque</p></div>
-    </div>
-
-    <hr class="divider" id="languages">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Multilingual</div><div class="section-title">Languages</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Multiling&uuml;e</div><div class="section-title">Idiomas</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Multilingue</div><div class="section-title">Langues</div></div>
-
-    <div class="lang-grid reveal" data-lang="en">
-      <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Native</span></div>
-      <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Native</span></div>
-      <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">C1</span></div>
-      <div class="lang-item"><span class="lang-name">French</span><span class="lang-level">C1</span></div>
-    </div>
-    <div class="lang-grid reveal" data-lang="es">
-      <div class="lang-item"><span class="lang-name">Ingl&eacute;s</span><span class="lang-level">Nativo</span></div>
-      <div class="lang-item"><span class="lang-name">Filipino</span><span class="lang-level">Nativo</span></div>
-      <div class="lang-item"><span class="lang-name">Espa&ntilde;ol</span><span class="lang-level">C1</span></div>
-      <div class="lang-item"><span class="lang-name">Franc&eacute;s</span><span class="lang-level">C1</span></div>
-    </div>
-    <div class="lang-grid reveal" data-lang="fr">
-      <div class="lang-item"><span class="lang-name">Anglais</span><span class="lang-level">Natif</span></div>
-      <div class="lang-item"><span class="lang-name">Philippin</span><span class="lang-level">Natif</span></div>
-      <div class="lang-item"><span class="lang-name">Espagnol</span><span class="lang-level">C1</span></div>
-      <div class="lang-item"><span class="lang-name">Fran&ccedil;ais</span><span class="lang-level">C1</span></div>
-    </div>
-
-    <hr class="divider" id="education">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Education</div><div class="section-title">Academic Background</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Formaci&oacute;n</div><div class="section-title">Formaci&oacute;n Acad&eacute;mica</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Formation</div><div class="section-title">Parcours Acad&eacute;mique</div></div>
-
-    <div data-lang="en" class="reveal"><div class="edu-block"><div class="edu-degree">Master in Business Diplomacy</div><div class="edu-school">University of Deusto &middot; Bilbao, Spain</div></div></div>
-    <div data-lang="es" class="reveal"><div class="edu-block"><div class="edu-degree">M&aacute;ster en Diplomacia Empresarial</div><div class="edu-school">Universidad de Deusto &middot; Bilbao, Espa&ntilde;a</div></div></div>
-    <div data-lang="fr" class="reveal"><div class="edu-block"><div class="edu-degree">Master en Diplomatie des Affaires</div><div class="edu-school">Universit&eacute; de Deusto &middot; Bilbao, Espagne</div></div></div>
-
-    <div data-lang="en" class="reveal"><div class="edu-block"><div class="edu-degree">Bachelor's in Consular and Diplomatic Affairs</div><div class="edu-school">De La Salle - College of Saint Benilde &middot; Manila, Philippines</div></div></div>
-    <div data-lang="es" class="reveal"><div class="edu-block"><div class="edu-degree">Grado en Asuntos Consulares y Diplomáticos</div><div class="edu-school">De La Salle - Universidad de San Benildo &middot; Manila, Filipinas</div></div></div>
-    <div data-lang="fr" class="reveal"><div class="edu-block"><div class="edu-degree">Licence en Affaires Consulaires et Diplomatiques</div><div class="edu-school">De La Salle - Collège de Saint Benilde &middot; Manille, Philippines</div></div></div>
 
     <hr class="divider" id="contact">
-
-    <div class="section reveal" data-lang="en"><div class="section-label">Connect</div><div class="section-title">Get in Touch</div></div>
-    <div class="section reveal" data-lang="es"><div class="section-label">Conectar</div><div class="section-title">Contacto</div></div>
-    <div class="section reveal" data-lang="fr"><div class="section-label">Connecter</div><div class="section-title">Contact</div></div>
-
-    <div class="contact-row reveal" data-lang="en">
-      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Email"> Email</a>
-      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
-      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Phone</a>
+    <div class="contact-row active" data-lang="en">
+      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link">Email</a>
+      <a href="https://linkedin.com/in/amld/" class="contact-link">LinkedIn</a>
     </div>
-    <div class="contact-row reveal" data-lang="es">
-      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Correo"> Correo</a>
-      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
-      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telefono</a>
-    </div>
-    <div class="contact-row reveal" data-lang="fr">
-      <a href="mailto:augustomanuel.delfin@gmail.com" class="contact-link"><img src="email-ico.png" alt="Courriel"> Courriel</a>
-      <a href="https://www.linkedin.com/in/amld/" class="contact-link" target="_blank"><img src="linkedin-ico.png" alt="LinkedIn"> LinkedIn</a>
-      <a href="tel:+34662652532" class="contact-link" target="_blank"><img src="phone-ico.png" alt="LinkedIn"> Telephone</a>
-    </div>
-
   </div>
 
-  <div class="footer-bar">Augusto Manuel Legaspi Delfin &middot; Bilbao, Spain &middot; 2026</div>
-
+  <div class="footer-bar">Augusto Manuel Legaspi Delfin · 2026</div>
 </div>
 
 <script>
 function switchLang(lang) {
   const btns = document.querySelectorAll('.lang-btn');
   btns.forEach(b => b.classList.remove('active'));
-  
-  // Find and activate the correct language button based on the language code
   const activeBtn = Array.from(btns).find(btn => btn.getAttribute('onclick').includes(`'${lang}'`));
   if (activeBtn) activeBtn.classList.add('active');
 
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-lang]').forEach(function(el) {
-    if (el.dataset.lang === lang) {
-      el.classList.add('active');
-    } else {
-      el.classList.remove('active');
-    }
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
   });
-}
-
-function togglePillar(header) {
-  header.closest('.pillar').classList.toggle('open');
 }
 
 function toggleCase(header) {
   header.closest('.case-study').classList.toggle('open');
 }
-
-function scrollToProject(index) {
-  // Target the carousel that is currently visible
-  const activeCarousel = document.querySelector('.projects-carousel.active');
-  if (!activeCarousel) return;
-
-  const container = activeCarousel.querySelector('.projects-container');
-  const cards = activeCarousel.querySelectorAll('.project-card');
-  const dots = activeCarousel.querySelectorAll('.carousel-dot');
-  
-  if (cards[index]) {
-    container.scrollTo({
-      left: cards[index].offsetLeft,
-      behavior: 'smooth'
-    });
-    
-    // Update active dot and card
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-    
-    cards.forEach((card, i) => {
-      card.classList.toggle('active', i === index);
-    });
-  }
-}
-
-// Update active dot and card on scroll
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('[data-lang="en"]').forEach(function(el) {
-    el.classList.add('active');
-  });
-  
-  // Initialize the first card as active for every language carousel
-  document.querySelectorAll('.projects-carousel').forEach(carousel => {
-    const firstCard = carousel.querySelector('.project-card');
-    if (firstCard) firstCard.classList.add('active');
-  });
-  
-  // Add scroll listeners to all language containers
-  document.querySelectorAll('.projects-container').forEach(container => {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    container.addEventListener('mousedown', (e) => {
-      isDown = true;
-      container.classList.add('grabbing');
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
-    });
-
-    const handleSnap = () => {
-      if (!isDown) return;
-      isDown = false;
-      container.classList.remove('grabbing');
-      
-      const cards = container.querySelectorAll('.project-card');
-      if (cards.length === 0) return;
-      
-      // Calculate the nearest card index based on current scroll position
-      const cardWidth = cards[0].offsetWidth;
-      const index = Math.round(container.scrollLeft / cardWidth);
-      
-      // Trigger the slide while snapping is still disabled by the 'grabbing' class
-      scrollToProject(index);
-      
-      // Wait for the smooth scroll to finish (approx 500ms) before re-enabling snapping
-      setTimeout(() => {
-        container.classList.remove('grabbing');
-      }, 500);
-    };
-
-    container.addEventListener('mouseleave', handleSnap);
-    container.addEventListener('mouseup', handleSnap);
-
-    container.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; 
-      container.scrollLeft = scrollLeft - walk;
-    });
-
-    container.addEventListener('scroll', function() {
-      const carousel = container.closest('.projects-carousel');
-      const cards = carousel.querySelectorAll('.project-card');
-      const dots = carousel.querySelectorAll('.carousel-dot');
-      const scrollLeft = container.scrollLeft;
-      
-      cards.forEach((card, index) => {
-        const cardLeft = card.offsetLeft;
-        const cardRight = cardLeft + card.offsetWidth;
-        // Check if this card is centered in the current viewport
-        const isActive = scrollLeft >= cardLeft - 50 && scrollLeft < cardRight - 50;
-        
-        card.classList.toggle('active', isActive);
-        if (dots[index]) dots[index].classList.toggle('active', isActive);
-      });
-    });
-  });
-
-  // Pulse effect logic for navigation
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      let toPulse = [];
-      // If target is the About container, pulse its active children
-      if (target.classList.contains('content')) {
-        toPulse = Array.from(target.children).filter(c => c.classList.contains('section') && c.classList.contains('active'));
-      } else if (target.tagName === 'HR') {
-        // If target is a divider, pulse the visible sections that follow it
-        let next = target.nextElementSibling;
-        while (next && next.tagName !== 'HR') {
-          if (next.classList.contains('active')) toPulse.push(next);
-          next = next.nextElementSibling;
-        }
-      }
-
-      toPulse.forEach(el => {
-        el.classList.remove('fade-in-active');
-        void el.offsetWidth; // Trigger reflow to restart animation
-        el.classList.add('fade-in-active');
-      });
-    });
-  });
-
-  // Scroll reveal observer
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    revealObserver.observe(el);
-  });
-});
 </script>
 </body>
 </html>
